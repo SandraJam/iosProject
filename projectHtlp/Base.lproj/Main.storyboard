@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="952" y="289"/>
         </scene>
-        <!--View Controller-->
+        <!--Inscription-->
         <scene sceneID="khh-je-V1W">
             <objects>
-                <viewController id="Ofk-Bh-G9y" sceneMemberID="viewController">
+                <viewController title="Inscription" id="Ofk-Bh-G9y" customClass="InscriptionViewController" customModule="projectHtlp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gfB-S8-b65"/>
                         <viewControllerLayoutGuide type="bottom" id="pE2-OZ-3EJ"/>
@@ -75,7 +75,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="U8F-jC-V8f" firstAttribute="centerX" secondItem="wld-FN-7Gt" secondAttribute="centerX" id="8UQ-y1-0Xh"/>
                         </constraints>
@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="1430" y="637"/>
         </scene>
-        <!--View Controller-->
+        <!--Connexion-->
         <scene sceneID="cXi-WL-9eD">
             <objects>
-                <viewController id="wx1-FT-AzE" sceneMemberID="viewController">
+                <viewController title="Connexion" id="wx1-FT-AzE" customClass="ConnexionViewController" customModule="projectHtlp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FVz-vo-O83"/>
                         <viewControllerLayoutGuide type="bottom" id="JZQ-aB-zLz"/>
@@ -98,9 +98,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="C1p-Hd-qsH">
+                                <rect key="frame" x="119" y="210" width="109" height="90"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRX-He-6Gw">
+                                        <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ul-Me-KS6">
+                                        <rect key="frame" x="0.0" y="30" width="109" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnP-ma-FtZ">
+                                        <rect key="frame" x="0.0" y="60" width="109" height="30"/>
+                                        <state key="normal" title="Se connecter"/>
+                                        <connections>
+                                            <action selector="onClick:" destination="wx1-FT-AzE" eventType="touchUpInside" id="jjv-h1-zUc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Connexion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDO-3M-gl2">
                                 <rect key="frame" x="97" y="64" width="126" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -111,6 +133,11 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="button" destination="LnP-ma-FtZ" id="sX1-4W-h86"/>
+                        <outlet property="loginTextField" destination="RRX-He-6Gw" id="cIS-Tq-hXp"/>
+                        <outlet property="passwordTextField" destination="1ul-Me-KS6" id="ilY-y0-kab"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHf-Ul-hw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
