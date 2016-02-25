@@ -141,6 +141,7 @@
 			files = (
 				0C45F3401C7F5D6E0009A19E /* LaunchScreen.storyboard in Resources */,
 				0C45F33D1C7F5D6E0009A19E /* Assets.xcassets in Resources */,
+				0C45F34A1C7F631A0009A19E /* fond.jpg in Resources */,
 				0C45F3381C7F5D6E0009A19E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

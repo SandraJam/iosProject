@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0X6-Rh-Y9R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0X6-Rh-Y9R">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -17,36 +17,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5q6-Rc-DLh">
-                                <rect key="frame" x="97" y="180" width="127" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UIK-nV-Utk">
+                                <rect key="frame" x="73" y="154" width="139" height="135"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helpy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNR-K9-E5i">
-                                        <rect key="frame" x="0.0" y="0.0" width="127" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Koala" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFT-oQ-qai">
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="66"/>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="57"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u18-6u-05S">
-                                        <rect key="frame" x="0.0" y="60" width="127" height="30"/>
-                                        <state key="normal" title="Connexion"/>
+                                        <rect key="frame" x="0.0" y="66" width="139" height="34"/>
+                                        <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Connexion">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="wx1-FT-AzE" kind="show" identifier="connexion" id="NJm-8H-MFG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96u-oh-sPI">
-                                        <rect key="frame" x="0.0" y="90" width="127" height="30"/>
-                                        <state key="normal" title="Inscription"/>
+                                        <rect key="frame" x="0.0" y="100" width="139" height="35"/>
+                                        <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="Inscription">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="Ofk-Bh-G9y" kind="show" identifier="inscription" id="FHV-FE-V1e"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rKq-Xm-AGI">
+                                <rect key="frame" x="40" y="176" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5q6-Rc-DLh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mwh-Tk-vfM"/>
-                            <constraint firstItem="5q6-Rc-DLh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s8u-Fx-K1d"/>
+                            <constraint firstItem="UIK-nV-Utk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SnL-6R-UQa"/>
+                            <constraint firstItem="UIK-nV-Utk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dEp-Y0-nou"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ybf-Jc-evL"/>
