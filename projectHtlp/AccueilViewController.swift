@@ -1,30 +1,19 @@
 //
-//  InscriptionViewController.swift
+//  AccueilViewController.swift
 //  projectHtlp
 //
-//  Created by Moi on 25/02/2016.
+//  Created by Moi on 27/02/2016.
 //  Copyright © 2016 projet. All rights reserved.
 //
 
 import UIKit
 
-class InscriptionViewController: UIViewController {
+class AccueilViewController: UIViewController {
 
-    @IBOutlet weak var nomTextField: UITextField!
-    @IBOutlet weak var prenomTextField: UITextField!
-    @IBOutlet weak var mailTextField: UITextField!
-    @IBOutlet weak var bioTextField: UITextField!
-    
-    
-    @IBAction func onClickButton(sender: AnyObject) {
-        print("nom: \(nomTextField.text) & prénom: \(prenomTextField.text)")
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("Inscription controller")
+        print("Accueil controller")
         // Do any additional setup after loading the view.
     }
 

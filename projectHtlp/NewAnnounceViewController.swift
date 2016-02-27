@@ -1,30 +1,32 @@
 //
-//  InscriptionViewController.swift
+//  NewAnnounceViewController.swift
 //  projectHtlp
 //
-//  Created by Moi on 25/02/2016.
+//  Created by Moi on 27/02/2016.
 //  Copyright © 2016 projet. All rights reserved.
 //
 
 import UIKit
 
-class InscriptionViewController: UIViewController {
+class NewAnnounceViewController: UIViewController {
 
-    @IBOutlet weak var nomTextField: UITextField!
-    @IBOutlet weak var prenomTextField: UITextField!
-    @IBOutlet weak var mailTextField: UITextField!
-    @IBOutlet weak var bioTextField: UITextField!
+    @IBOutlet weak var titreTextField: UITextField!
+    // trouver comment faire une liste style input select en html
+    @IBOutlet weak var categorieTextField: UITextField!
+    // trouver comment mettre sur plusieurs lignes
+    @IBOutlet weak var descriptionTextField: UITextField!
     
-    
+    // trouver comment faire retour pour la navigation bar plutôt que d'ouvrir à nouveau accueil
+
     @IBAction func onClickButton(sender: AnyObject) {
-        print("nom: \(nomTextField.text) & prénom: \(prenomTextField.text)")
+        print("titre: \(titreTextField.text)")
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("Inscription controller")
+        print("Nouvelle annonce controller")
         // Do any additional setup after loading the view.
     }
 
