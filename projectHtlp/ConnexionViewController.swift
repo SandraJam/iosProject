@@ -13,18 +13,16 @@ class ConnexionViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var button: UIButton!
-    
-    
-    @IBAction func onClick(sender: AnyObject) {
-        
-        print("login: \(loginTextField.text) & password: \(passwordTextField.text)");
-    }
 
+    @IBAction func onClickButton(sender: AnyObject) {
+        print("login: \(loginTextField.text) & password: \(passwordTextField.text)")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("Connexion controller")
         // Do any additional setup after loading the view.
     }
 
