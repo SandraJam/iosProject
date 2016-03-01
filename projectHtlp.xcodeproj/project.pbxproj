@@ -75,6 +75,7 @@
 			);
 			path = projectHtlp;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		ED89AD051C7F679800EB6668 /* Controllers */ = {
 			isa = PBXGroup;
