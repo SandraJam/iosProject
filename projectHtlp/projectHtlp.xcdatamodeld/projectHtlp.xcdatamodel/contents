@@ -41,6 +41,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="mail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="noteDonnee" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avis" inverseName="donneurAvis" inverseEntity="Avis" syncable="YES"/>
         <relationship name="noteRecu" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avis" inverseName="receveurAvis" inverseEntity="Avis" syncable="YES"/>
@@ -48,10 +49,10 @@
         <relationship name="serviceRecu" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceDonne" inverseName="userRecoit" inverseEntity="ServiceDonne" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-459" positionY="239" width="92" height="208"/>
+        <element name="Avis" positionX="-261" positionY="-7" width="128" height="133"/>
         <element name="Category" positionX="-279" positionY="162" width="128" height="118"/>
         <element name="Service" positionX="-117" positionY="207" width="128" height="178"/>
         <element name="ServiceDonne" positionX="180" positionY="369" width="128" height="133"/>
-        <element name="Avis" positionX="-261" positionY="-7" width="128" height="133"/>
+        <element name="User" positionX="-459" positionY="239" width="92" height="225"/>
     </elements>
 </model>
