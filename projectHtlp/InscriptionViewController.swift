@@ -8,12 +8,13 @@
 
 import UIKit
 
-class InscriptionViewController: UIViewController {
+class InscriptionViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nomTextField: UITextField!
     @IBOutlet weak var prenomTextField: UITextField!
     @IBOutlet weak var mailTextField: UITextField!
-    @IBOutlet weak var bioTextField: UITextField!
+    @IBOutlet weak var adresseTextField: UITextField!
+    @IBOutlet weak var bioTextField: UITextView!
     
     
     @IBAction func onClickButton(sender: AnyObject) {
@@ -23,7 +24,8 @@ class InscriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.nomTextField.delegate = self
         print("Inscription controller")
         // Do any additional setup after loading the view.
     }
@@ -43,5 +45,8 @@ class InscriptionViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }
