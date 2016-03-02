@@ -350,7 +350,7 @@
         <image name="fond" width="800" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="79c-iA-0VM"/>
         <segue reference="XuA-Xa-eAh"/>
+        <segue reference="vk7-q6-TNq"/>
     </inferredMetricsTieBreakers>
 </document>

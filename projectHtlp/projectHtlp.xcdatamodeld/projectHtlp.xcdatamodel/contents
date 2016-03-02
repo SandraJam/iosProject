@@ -1,4 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Avis" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="donneurAvis" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="noteDonnee" inverseEntity="User" syncable="YES"/>
+        <relationship name="receveurAvis" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="noteRecu" inverseEntity="User" syncable="YES"/>
+        <relationship name="service" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ServiceDonne" inverseName="avis" inverseEntity="ServiceDonne" syncable="YES"/>
+    </entity>
+    <entity name="Category" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="service" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Service" inverseName="category" inverseEntity="Service" syncable="YES"/>
+    </entity>
+    <entity name="Service" syncable="YES">
+        <attribute name="beginDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalTime" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="service" inverseEntity="Category" syncable="YES"/>
+        <relationship name="serviceDonne" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceDonne" inverseName="service" inverseEntity="ServiceDonne" syncable="YES"/>
+        <relationship name="userDonne" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="service" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="ServiceDonne" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="avis" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avis" inverseName="service" inverseEntity="Avis" syncable="YES"/>
+        <relationship name="service" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Service" inverseName="serviceDonne" inverseEntity="Service" syncable="YES"/>
+        <relationship name="userRecoit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="serviceRecu" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="noteDonnee" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avis" inverseName="donneurAvis" inverseEntity="Avis" syncable="YES"/>
+        <relationship name="noteRecu" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avis" inverseName="receveurAvis" inverseEntity="Avis" syncable="YES"/>
+        <relationship name="service" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Service" inverseName="userDonne" inverseEntity="Service" syncable="YES"/>
+        <relationship name="serviceRecu" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceDonne" inverseName="userRecoit" inverseEntity="ServiceDonne" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="User" positionX="-459" positionY="239" width="92" height="208"/>
+        <element name="Category" positionX="-279" positionY="162" width="128" height="118"/>
+        <element name="Service" positionX="-117" positionY="207" width="128" height="178"/>
+        <element name="ServiceDonne" positionX="180" positionY="369" width="128" height="133"/>
+        <element name="Avis" positionX="-261" positionY="-7" width="128" height="133"/>
+    </elements>
 </model>
