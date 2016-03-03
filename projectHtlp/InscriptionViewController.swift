@@ -108,7 +108,7 @@ class InscriptionViewController: UIViewController, UITextFieldDelegate, UITextVi
         if(errorBool) {
             errorLabel.text = errorStr
         }
-            // sinon vérifier que l'utilisateur n'existe pas déjà
+        // sinon vérifier que l'utilisateur n'existe pas déjà
         else {
             let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let context: NSManagedObjectContext = appDel.managedObjectContext
@@ -138,12 +138,14 @@ class InscriptionViewController: UIViewController, UITextFieldDelegate, UITextVi
                         if let resultController = storyboard?.instantiateViewControllerWithIdentifier("accueil") as? AccueilViewController {
                             presentViewController(resultController, animated: true, completion: nil)
                         }
+                        else {
+                            print("Echec de l'ouverture de la vue accueil")
+                        }
                     } catch {
                         print("Echec de la requete: save")
                     }
                 }
-            }
-            catch {
+            } catch {
                 print("Echec de la requete: get")
             }
         }
