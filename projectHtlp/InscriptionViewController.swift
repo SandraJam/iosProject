@@ -104,7 +104,7 @@ class InscriptionViewController: UIViewController, UITextFieldDelegate, UITextVi
             errorBool = true
         }
         
-        // si un champ n'est pas rempli, afficher l'erreyr
+        // si un champ n'est pas rempli, afficher l'erreur
         if(errorBool) {
             errorLabel.text = errorStr
         }
