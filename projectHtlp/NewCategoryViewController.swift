@@ -9,17 +9,23 @@
 import UIKit
 import CoreData
 
-class NewCategoryViewController: UIViewController {
+class NewCategoryViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var categoryTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.categoryTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     // ajouter une catégorie

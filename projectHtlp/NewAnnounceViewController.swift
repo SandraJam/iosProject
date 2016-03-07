@@ -11,9 +11,15 @@ import CoreData
 
 class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    
+    @IBOutlet weak var scrollview: UIScrollView!
+    
     @IBOutlet weak var titreTextField: UITextField!
     @IBOutlet weak var pickerCategorie: UIPickerView!
     @IBOutlet weak var descriptionTextField: UITextView!
+    @IBOutlet weak var dateDebutPicker: UIDatePicker!
+    @IBOutlet weak var dateFinPicker: UIDatePicker!
+    @IBOutlet weak var timeTextField: UITextField!
   
     var categoriesList: [String] = []
     var selectedCategory: String = ""
@@ -21,6 +27,10 @@ class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollview.contentSize.height = 800
+        
+       
         selectedCategory = "none"
         
         // bordure du textView de la description
