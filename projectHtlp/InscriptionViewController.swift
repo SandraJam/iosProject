@@ -34,9 +34,14 @@ class InscriptionViewController: UIViewController, UITextFieldDelegate, UITextVi
         self.bioTextField.delegate = self
         self.passwordTextField.delegate = self
         
+        self.bioTextField.delegate = self
+        
         // bordure du textView de la vio
         bioTextField!.layer.borderWidth = 1
         bioTextField!.layer.borderColor = UIColor.grayColor().CGColor
+        
+        // Background
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "fond2")!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,18 +54,32 @@ class InscriptionViewController: UIViewController, UITextFieldDelegate, UITextVi
         return false
     }
     
+    func textViewShouldReturn(textField: UITextView) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    // Remettre tous les champs par defaut
+    func allToBlank(){
+        mailTextField.layer.borderWidth = 0;
+        adresseTextField.layer.borderWidth = 0;
+        prenomTextField.layer.borderWidth = 0;
+        passwordTextField.layer.borderWidth = 0;
+        nomTextField.layer.borderWidth = 0;
+    }
+    
     
     // appuie sur le bouton "s'inscrire"
     @IBAction func onClickButton(sender: AnyObject) {
         // réinitialiser le message d'erreur
-        errorLabel.text = ""
+        allToBlank();
         
         // vérifier que les champs sont remplis
-        var errorStr: String = "Veuillez renseigner:"
         var errorBool = false
         // mail
         if let text = mailTextField.text where text.isEmpty {
-            errorStr += "\n votre email"
+            mailTextField.layer.borderWidth = 2
+            mailTextField.layer.borderColor = UIColor.redColor().CGColor
             errorBool = true
         }
         else {
@@ -69,13 +88,15 @@ class InscriptionViewController: UIViewController, UITextFieldDelegate, UITextVi
             let regexError = regex.firstMatchInString(mailTextField.text!, options: [], range: NSMakeRange(0, mailTextField.text!.utf16.count)) != nil
     
             if(!regexError) {
-                errorStr += "\n un email valide"
+                mailTextField.layer.borderWidth = 2
+                mailTextField.layer.borderColor = UIColor.redColor().CGColor
                 errorBool = true
             }
         }
         // mot de passe
         if let text = passwordTextField.text where text.isEmpty {
-            errorStr += "\n un mot de passe"
+            passwordTextField.layer.borderWidth = 2
+            passwordTextField.layer.borderColor = UIColor.redColor().CGColor
             errorBool = true
         }
         else {
@@ -84,32 +105,32 @@ class InscriptionViewController: UIViewController, UITextFieldDelegate, UITextVi
             let regexError = regex.firstMatchInString(mailTextField.text!, options: [], range: NSMakeRange(0, mailTextField.text!.utf16.count)) != nil
             
             if(!regexError) {
-                errorStr += "\n mot de passe valide (alphanumérique)"
+                passwordTextField.layer.borderWidth = 2
+                passwordTextField.layer.borderColor = UIColor.redColor().CGColor
                 errorBool = true
             }
         }
         // nom
         if let text = nomTextField.text where text.isEmpty {
-            errorStr += "\n votre nom"
+            nomTextField.layer.borderWidth = 2
+            nomTextField.layer.borderColor = UIColor.redColor().CGColor
             errorBool = true
         }
         // prénom
         if let text = prenomTextField.text where text.isEmpty {
-            errorStr += "\n votre prénom"
+            prenomTextField.layer.borderWidth = 2
+            prenomTextField.layer.borderColor = UIColor.redColor().CGColor
             errorBool = true
         }
         // adresse
         if let text = adresseTextField.text where text.isEmpty {
-            errorStr += "\n votre adresse"
+            adresseTextField.layer.borderWidth = 2
+            adresseTextField.layer.borderColor = UIColor.redColor().CGColor
             errorBool = true
         }
         
         // si un champ n'est pas rempli, afficher l'erreur
-        if(errorBool) {
-            errorLabel.text = errorStr
-        }
-        // sinon vérifier que l'utilisateur n'existe pas déjà
-        else {
+        if(!errorBool){
             let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let context: NSManagedObjectContext = appDel.managedObjectContext
             

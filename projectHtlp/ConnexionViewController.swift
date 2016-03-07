@@ -23,6 +23,9 @@ class ConnexionViewController: UIViewController, UITextFieldDelegate {
         // delegate pour fermer le clavier via le bouton retour
         self.loginTextField.delegate = self
         self.passwordTextField.delegate = self
+        
+        // Background
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "fond2")!)
     }
 
     override func didReceiveMemoryWarning() {

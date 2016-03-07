@@ -10,6 +10,7 @@ import UIKit
 
 class AccueilViewController: UIViewController {
 
+    @IBOutlet weak var newAnnounce: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
