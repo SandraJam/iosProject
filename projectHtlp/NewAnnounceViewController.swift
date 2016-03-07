@@ -30,7 +30,6 @@ class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         scrollview.contentSize.height = 800
         
-       
         selectedCategory = "none"
         
         // bordure du textView de la description
@@ -76,13 +75,26 @@ class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     // action à faire lorsque l'on sélectionne un élément
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // TRAITER LE CAS NULL
         selectedCategory = categoriesList[row]
-        print("selected: \(selectedCategory)")
     }
     
 
     @IBAction func onClickButton(sender: AnyObject) {
-        print("result: \(selectedCategory)")
+        print("titre: \(titreTextField.text)")
+        print("categorie: \(selectedCategory)")
+        print("description: \(descriptionTextField.text)")
+        print("début: \(dateDebutPicker.date)")
+        print("fin: \(dateFinPicker.date)")
+        print("temps: \(timeTextField.text)")
+        
+        /*
+        à vérifier:
+        titre non vide
+        catégorie non nulle
+        description non vide
+        date de début avant date de fin
+        */
     }
     
     
