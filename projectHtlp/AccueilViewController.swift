@@ -31,7 +31,6 @@ class AccueilViewController: UIViewController, UICollectionViewDataSource, UICol
         requete.returnsObjectsAsFaults = false
         do {
             resultats = try contexte.executeFetchRequest(requete)
-            print(resultats.count)
             if (resultats.count > 0){
                 for res in resultats as! [NSManagedObject] {
                     icons.append((res.valueForKey("icon") as? String)!)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
@@ -21,6 +22,9 @@ class ViewController: UIViewController {
         inscription.layer.cornerRadius = 5
         inscription.layer.borderWidth = 2
         inscription.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        /* A DECOMMENTER POUR DELETE LES CATEGORIES ET A RECOMMENTER APRES */
+        //deleteCatgeorie()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +32,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func deleteCatgeorie(){
+        // Recupérer les categories
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let contexte: NSManagedObjectContext = appDel.managedObjectContext
+        let requete = NSFetchRequest(entityName: "Category")
+        requete.returnsObjectsAsFaults = false
+        do {
+            let resultats = try contexte.executeFetchRequest(requete)
+            if (resultats.count > 0){
+                for res in resultats as! [NSManagedObject] {
+                    contexte.deleteObject(res)
+                }
+                try contexte.save()
+            }
+        } catch {
+            print("Echec de la requête: get")
+        }
+    }
 }
 
