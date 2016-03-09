@@ -9,8 +9,12 @@
 import UIKit
 
 class AccueilViewController: UIViewController {
-
-    @IBOutlet weak var newAnnounce: UIButton!
+    
+    @IBOutlet weak var newAnnounceBar: UIBarButtonItem!
+    @IBOutlet weak var moncompteBar: UIBarButtonItem!
+    @IBOutlet weak var notifBar: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
