@@ -12,10 +12,14 @@ import CoreData
 class NewCategoryViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet weak var iconTF: UITextField!
+    @IBOutlet weak var colorTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.categoryTextField.delegate = self
+        self.iconTF.delegate = self
+        self.colorTF.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +47,8 @@ class NewCategoryViewController: UIViewController, UITextFieldDelegate {
             else {
                 let newEntry = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: context)
                 newEntry.setValue(categoryTextField.text, forKey: "name")
+                newEntry.setValue(iconTF.text, forKey: "icon")
+                newEntry.setValue(colorTF.text, forKey: "color")
                 do {
                     try context.save()
                     // ouvrir la page d'accueil
