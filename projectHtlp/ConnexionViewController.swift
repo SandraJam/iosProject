@@ -63,6 +63,10 @@ class ConnexionViewController: UIViewController, UITextFieldDelegate {
                 let resultat = try context.executeFetchRequest(requete)
                 // si la connexion est ok, ouvrir la page d'accueil
                 if(resultat.count > 0) {
+                    // Données utilisateurs en mémoire
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setValue(loginTextField.text, forKey: "mail")
+                    defaults.synchronize()
                     if let resultController = storyboard?.instantiateViewControllerWithIdentifier("accueil") as? AccueilViewController {
                         presentViewController(resultController, animated: true, completion: nil)
                     }

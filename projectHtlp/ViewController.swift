@@ -23,6 +23,11 @@ class ViewController: UIViewController {
         inscription.layer.borderWidth = 2
         inscription.layer.borderColor = UIColor.whiteColor().CGColor
         
+        // Données utilisateurs en mémoire
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setValue("", forKey: "mail")
+        defaults.synchronize()
+        
         /* A DECOMMENTER POUR DELETE LES CATEGORIES ET A RECOMMENTER APRES */
         //deleteCatgeorie()
     }

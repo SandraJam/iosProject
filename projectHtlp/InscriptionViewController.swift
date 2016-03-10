@@ -155,6 +155,10 @@ class InscriptionViewController: UIViewController, UITextFieldDelegate, UITextVi
                     
                     do {
                         try context.save()
+                        // Données utilisateurs en mémoire
+                        let defaults = NSUserDefaults.standardUserDefaults()
+                        defaults.setValue(mailTextField.text, forKey: "mail")
+                        defaults.synchronize()
                         // ouvrir la page d'accueil
                         if let resultController = storyboard?.instantiateViewControllerWithIdentifier("accueil") as? AccueilViewController {
                             presentViewController(resultController, animated: true, completion: nil)

@@ -18,6 +18,10 @@
 		ED89AD031C7F676100EB6668 /* InscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89AD021C7F676100EB6668 /* InscriptionViewController.swift */; };
 		ED8EAF761C824475007C3256 /* AccueilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EAF751C824475007C3256 /* AccueilViewController.swift */; };
 		ED8EAF781C824653007C3256 /* NewAnnounceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EAF771C824653007C3256 /* NewAnnounceViewController.swift */; };
+		EDDDFE811C909F3500DE5602 /* CompteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE801C909F3500DE5602 /* CompteViewController.swift */; };
+		EDDDFE831C91E34B00DE5602 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE821C91E34B00DE5602 /* CategoriesTableViewController.swift */; };
+		EDDDFE851C91E56D00DE5602 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE841C91E56D00DE5602 /* CategoryTableViewCell.swift */; };
+		EDDDFE871C92049700DE5602 /* CategoriesIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE861C92049700DE5602 /* CategoriesIconViewController.swift */; };
 		EDFD75361C90347D0016E1F0 /* CategoryViewCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD75351C90347C0016E1F0 /* CategoryViewCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +39,10 @@
 		ED89AD021C7F676100EB6668 /* InscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InscriptionViewController.swift; sourceTree = "<group>"; };
 		ED8EAF751C824475007C3256 /* AccueilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccueilViewController.swift; sourceTree = "<group>"; };
 		ED8EAF771C824653007C3256 /* NewAnnounceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAnnounceViewController.swift; sourceTree = "<group>"; };
+		EDDDFE801C909F3500DE5602 /* CompteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompteViewController.swift; sourceTree = "<group>"; };
+		EDDDFE821C91E34B00DE5602 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		EDDDFE841C91E56D00DE5602 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		EDDDFE861C92049700DE5602 /* CategoriesIconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesIconViewController.swift; sourceTree = "<group>"; };
 		EDFD75351C90347C0016E1F0 /* CategoryViewCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,8 +96,12 @@
 				ED89AD001C7F672800EB6668 /* ConnexionViewController.swift */,
 				ED89AD021C7F676100EB6668 /* InscriptionViewController.swift */,
 				ED8EAF771C824653007C3256 /* NewAnnounceViewController.swift */,
+				EDDDFE801C909F3500DE5602 /* CompteViewController.swift */,
 				ED7C9FA01C899EC9004FF4A4 /* NewCategoryViewController.swift */,
 				EDFD75351C90347C0016E1F0 /* CategoryViewCellCollectionViewCell.swift */,
+				EDDDFE821C91E34B00DE5602 /* CategoriesTableViewController.swift */,
+				EDDDFE841C91E56D00DE5602 /* CategoryTableViewCell.swift */,
+				EDDDFE861C92049700DE5602 /* CategoriesIconViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -170,10 +182,14 @@
 				ED8EAF781C824653007C3256 /* NewAnnounceViewController.swift in Sources */,
 				ED89AD031C7F676100EB6668 /* InscriptionViewController.swift in Sources */,
 				0C45F3351C7F5D6E0009A19E /* ViewController.swift in Sources */,
+				EDDDFE831C91E34B00DE5602 /* CategoriesTableViewController.swift in Sources */,
 				0C45F3331C7F5D6E0009A19E /* AppDelegate.swift in Sources */,
+				EDDDFE871C92049700DE5602 /* CategoriesIconViewController.swift in Sources */,
+				EDDDFE811C909F3500DE5602 /* CompteViewController.swift in Sources */,
 				0C45F33B1C7F5D6E0009A19E /* projectHtlp.xcdatamodeld in Sources */,
 				EDFD75361C90347D0016E1F0 /* CategoryViewCellCollectionViewCell.swift in Sources */,
 				ED8EAF761C824475007C3256 /* AccueilViewController.swift in Sources */,
+				EDDDFE851C91E56D00DE5602 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

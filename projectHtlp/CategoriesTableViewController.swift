@@ -1,69 +1,66 @@
 //
-//  AccueilViewController.swift
+//  CategoriesTableViewController.swift
 //  projectHtlp
 //
-//  Created by Moi on 27/02/2016.
+//  Created by Moi on 10/03/2016.
 //  Copyright © 2016 projet. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class AccueilViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class CategoriesTableViewController: UIViewController{
     
-    @IBOutlet weak var newAnnounceBar: UIBarButtonItem!
-    @IBOutlet weak var moncompteBar: UIBarButtonItem!
-    @IBOutlet weak var notifBar: UIBarButtonItem!
-    
-    let identifier = "Jules"
-    var resultats = []
     var icons : [String] = []
     var colors : [String] = []
     var names : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Recupérer les categories
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let contexte: NSManagedObjectContext = appDel.managedObjectContext
         let requete = NSFetchRequest(entityName: "Category")
         requete.returnsObjectsAsFaults = false
         do {
-            resultats = try contexte.executeFetchRequest(requete)
-            if (resultats.count > 0){
-                for res in resultats as! [NSManagedObject] {
-                    icons.append((res.valueForKey("icon") as? String)!)
-                    colors.append((res.valueForKey("color") as? String)!)
-                    names.append((res.valueForKey("name") as? String)!)
+            let resultats = try contexte.executeFetchRequest(requete)
+            if resultats.count > 0 {
+                for resultat in resultats as! [NSManagedObject] {
+                    icons.append((resultat.valueForKey("icon") as? String)!)
+                    colors.append((resultat.valueForKey("color") as? String)!)
+                    names.append((resultat.valueForKey("name") as? String)!)
                 }
             }
         } catch {
             print("Echec de la requête: get")
         }
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.resultats.count
+
+    // MARK: - Table view data source
+
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
     }
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return icons.count
+    }
+
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> CategoryTableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Marcel", forIndexPath: indexPath)as! CategoryTableViewCell
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CategoryViewCellCollectionViewCell
-        cell.icon.image = UIImage(named: self.icons[indexPath.item])
-        cell.nameTF.text = self.names[indexPath.item]
+        cell.imageCell.image = UIImage(named: self.icons[indexPath.item])
+        cell.nameCell.text = self.names[indexPath.item]
         cell.backgroundColor = colorWithHexString(self.colors[indexPath.item])
-        
+
         return cell
-    }
-    
-    // MARK: - UICollectionViewDelegate protocol
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
     }
     
     // Creates a UIColor from a Hex string.
@@ -90,4 +87,6 @@ class AccueilViewController: UIViewController, UICollectionViewDataSource, UICol
         
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
     }
+
+
 }
