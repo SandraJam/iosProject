@@ -63,6 +63,36 @@ class CategoriesTableViewController: UIViewController{
         return cell
     }
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool{
+        return true
+    }
+    
+    func tableView (tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        
+        if(editingStyle == UITableViewCellEditingStyle.Delete){
+            let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let contexte: NSManagedObjectContext = appDel.managedObjectContext
+            let requete = NSFetchRequest(entityName: "Category")
+            requete.predicate = NSPredicate(format: "name = %@", names[indexPath.item])
+            requete.returnsObjectsAsFaults = false
+            do {
+                let resultats = try contexte.executeFetchRequest(requete)
+                if resultats.count > 0 {
+                    for resultat in resultats as! [NSManagedObject] {
+                        contexte.deleteObject(resultat)
+                    }
+                    try contexte.save()
+                }
+            } catch {
+                print("Echec de la requête: get")
+            }
+            icons.removeAtIndex(indexPath.item)
+            names.removeAtIndex(indexPath.item)
+            colors.removeAtIndex(indexPath.item)
+            tableView.reloadData()
+        }
+    }
+    
     // Creates a UIColor from a Hex string.
     func colorWithHexString (hex:String) -> UIColor {
         var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString

@@ -234,16 +234,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxV-R2-Yj0">
-                                                    <rect key="frame" x="272" y="1" width="40" height="40"/>
-                                                    <state key="normal" image="delete">
-                                                        <color key="titleColor" red="0.52234006879999995" green="0.80933000649999998" blue="0.45759091140000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="LxV-R2-Yj0" firstAttribute="trailing" secondItem="KmU-e2-OPO" secondAttribute="trailingMargin" id="Pcb-So-qS5"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageCell" destination="VVp-2u-zJa" id="7Gj-iZ-L6E"/>
@@ -824,13 +815,12 @@
     <resources>
         <image name="add" width="48" height="48"/>
         <image name="alarm_empty" width="48" height="48"/>
-        <image name="delete" width="48" height="48"/>
         <image name="user" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hOD-Do-oE5"/>
-        <segue reference="rPo-53-24Y"/>
-        <segue reference="tkL-LF-dLt"/>
+        <segue reference="oJk-5d-dqT"/>
         <segue reference="HUV-72-kJb"/>
+        <segue reference="tkL-LF-dLt"/>
     </inferredMetricsTieBreakers>
 </document>
