@@ -22,6 +22,8 @@
 		EDDDFE831C91E34B00DE5602 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE821C91E34B00DE5602 /* CategoriesTableViewController.swift */; };
 		EDDDFE851C91E56D00DE5602 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE841C91E56D00DE5602 /* CategoryTableViewCell.swift */; };
 		EDDDFE871C92049700DE5602 /* CategoriesIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE861C92049700DE5602 /* CategoriesIconViewController.swift */; };
+		EDDDFE891C96F91600DE5602 /* ModifCompteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE881C96F91600DE5602 /* ModifCompteViewController.swift */; };
+		EDDDFE8B1C96F92800DE5602 /* ModifPictureCompteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE8A1C96F92800DE5602 /* ModifPictureCompteViewController.swift */; };
 		EDFD75361C90347D0016E1F0 /* CategoryViewCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD75351C90347C0016E1F0 /* CategoryViewCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		EDDDFE821C91E34B00DE5602 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		EDDDFE841C91E56D00DE5602 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		EDDDFE861C92049700DE5602 /* CategoriesIconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesIconViewController.swift; sourceTree = "<group>"; };
+		EDDDFE881C96F91600DE5602 /* ModifCompteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifCompteViewController.swift; sourceTree = "<group>"; };
+		EDDDFE8A1C96F92800DE5602 /* ModifPictureCompteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifPictureCompteViewController.swift; sourceTree = "<group>"; };
 		EDFD75351C90347C0016E1F0 /* CategoryViewCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +106,8 @@
 				EDDDFE821C91E34B00DE5602 /* CategoriesTableViewController.swift */,
 				EDDDFE841C91E56D00DE5602 /* CategoryTableViewCell.swift */,
 				EDDDFE861C92049700DE5602 /* CategoriesIconViewController.swift */,
+				EDDDFE881C96F91600DE5602 /* ModifCompteViewController.swift */,
+				EDDDFE8A1C96F92800DE5602 /* ModifPictureCompteViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -183,12 +189,14 @@
 				ED89AD031C7F676100EB6668 /* InscriptionViewController.swift in Sources */,
 				0C45F3351C7F5D6E0009A19E /* ViewController.swift in Sources */,
 				EDDDFE831C91E34B00DE5602 /* CategoriesTableViewController.swift in Sources */,
+				EDDDFE891C96F91600DE5602 /* ModifCompteViewController.swift in Sources */,
 				0C45F3331C7F5D6E0009A19E /* AppDelegate.swift in Sources */,
 				EDDDFE871C92049700DE5602 /* CategoriesIconViewController.swift in Sources */,
 				EDDDFE811C909F3500DE5602 /* CompteViewController.swift in Sources */,
 				0C45F33B1C7F5D6E0009A19E /* projectHtlp.xcdatamodeld in Sources */,
 				EDFD75361C90347D0016E1F0 /* CategoryViewCellCollectionViewCell.swift in Sources */,
 				ED8EAF761C824475007C3256 /* AccueilViewController.swift in Sources */,
+				EDDDFE8B1C96F92800DE5602 /* ModifPictureCompteViewController.swift in Sources */,
 				EDDDFE851C91E56D00DE5602 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

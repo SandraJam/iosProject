@@ -15,7 +15,6 @@ class InscriptionViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBOutlet weak var prenomTextField: UITextField!
     @IBOutlet weak var mailTextField: UITextField!
     @IBOutlet weak var adresseTextField: UITextField!
-    @IBOutlet weak var bioTextField: UITextView!
     @IBOutlet weak var passwordTextField: UITextField!
 
     @IBOutlet weak var errorLabel: UILabel!
@@ -31,14 +30,7 @@ class InscriptionViewController: UIViewController, UITextFieldDelegate, UITextVi
         self.prenomTextField.delegate = self
         self.mailTextField.delegate = self
         self.adresseTextField.delegate = self
-        self.bioTextField.delegate = self
         self.passwordTextField.delegate = self
-        
-        self.bioTextField.delegate = self
-        
-        // bordure du textView de la vio
-        bioTextField!.layer.borderWidth = 1
-        bioTextField!.layer.borderColor = UIColor.grayColor().CGColor
         
         // Background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "fond2")!)
@@ -151,7 +143,8 @@ class InscriptionViewController: UIViewController, UITextFieldDelegate, UITextVi
                     newEntry.setValue(nomTextField.text, forKey: "name")
                     newEntry.setValue(prenomTextField.text, forKey: "firstname")
                     newEntry.setValue(adresseTextField.text, forKey: "address")
-                    newEntry.setValue(bioTextField.text, forKey: "bio")
+                    newEntry.setValue("", forKey: "bio")
+                    newEntry.setValue("", forKey: "picture")
                     
                     do {
                         try context.save()
