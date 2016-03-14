@@ -61,10 +61,22 @@ class AccueilViewController: UIViewController, UICollectionViewDataSource, UICol
         return cell
     }
     
-    // MARK: - UICollectionViewDelegate protocol
-    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        
+        let requete = NSFetchRequest(entityName: "Category")
+        requete.predicate = NSPredicate(format: "name = %@", names[indexPath.item])
+        do {
+            let resultats = try context.executeFetchRequest(requete)
+            if(resultats.count > 0) {
+                
+            }
+        } catch {
+            print("Echec de la requete: get")
+        }
     }
+
     
     // Creates a UIColor from a Hex string.
     func colorWithHexString (hex:String) -> UIColor {

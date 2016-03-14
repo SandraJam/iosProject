@@ -180,7 +180,8 @@ class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPic
             
             do {
                 try context.save()
-                if let resultController = storyboard?.instantiateViewControllerWithIdentifier("accueil") as? AccueilViewController {
+                if let resultController = storyboard?.instantiateViewControllerWithIdentifier("announce") as? AnnounceViewController {
+                    resultController.announce = newEntry.objectID
                     presentViewController(resultController, animated: true, completion: nil)
                 } else {
                     print("Echec de l'ouverture de la vue accueil")
