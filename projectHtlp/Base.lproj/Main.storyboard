@@ -91,13 +91,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aiM-WZ-IU6">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="aiM-WZ-IU6">
+                                <rect key="frame" x="-4" y="20" width="328" height="44"/>
                                 <color key="barTintColor" red="1" green="0.81803584186373757" blue="0.43520865481209736" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fbi-FL-Sg5">
-                                <rect key="frame" x="5" y="64" width="315" height="372"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fbi-FL-Sg5">
+                                <rect key="frame" x="-4" y="64" width="328" height="372"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="jmr-0X-vff">
                                     <size key="itemSize" width="100" height="100"/>
@@ -137,8 +137,8 @@
                                     <outlet property="delegate" destination="emX-Ul-OMB" id="S2f-Hz-imc"/>
                                 </connections>
                             </collectionView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-Ag-cGL">
-                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-Ag-cGL">
+                                <rect key="frame" x="-4" y="436" width="328" height="44"/>
                                 <items>
                                     <barButtonItem image="user" id="mQF-M3-s9k">
                                         <color key="tintColor" red="0.52234006876630401" green="0.8093300065445026" blue="0.45759091143732861" alpha="1" colorSpace="calibratedRGB"/>
@@ -196,8 +196,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cEy-OK-PiB">
-                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEy-OK-PiB">
+                                <rect key="frame" x="-4" y="436" width="328" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="reply" id="7MW-7a-8nh">
                                         <color key="tintColor" red="0.52234006879999995" green="0.80933000649999998" blue="0.45759091140000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,15 +214,15 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q8s-Sr-egI">
-                                <rect key="frame" x="0.0" y="20" width="320" height="416"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q8s-Sr-egI">
+                                <rect key="frame" x="-4" y="20" width="328" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Marcel" id="gp8-pb-9Gg" customClass="CategoryTableViewCell" customModule="projectHtlp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="328" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gp8-pb-9Gg" id="KmU-e2-OPO">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VVp-2u-zJa">
@@ -363,8 +363,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eN9-9t-7L3">
-                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eN9-9t-7L3">
+                                <rect key="frame" x="-4" y="20" width="328" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4Rn-x0-S8S">
                                     <size key="itemSize" width="100" height="100"/>
@@ -443,13 +443,6 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Fh-ch-aUs">
-                                        <rect key="frame" x="8" y="117" width="304" height="90"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="rgD-fA-1g2" id="Pho-VS-Zvs"/>
-                                            <outlet property="delegate" destination="rgD-fA-1g2" id="Ck5-aQ-dLj"/>
-                                        </connections>
-                                    </pickerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Début de disponibilité" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trz-nC-I1U">
                                         <rect key="frame" x="8" y="308" width="170" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -483,8 +476,15 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Temps à consacrer pendant la période" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q5x-0E-FIc">
                                         <rect key="frame" x="8" y="542" width="304" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Fh-ch-aUs">
+                                        <rect key="frame" x="8" y="117" width="304" height="90"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="rgD-fA-1g2" id="Pho-VS-Zvs"/>
+                                            <outlet property="delegate" destination="rgD-fA-1g2" id="Ck5-aQ-dLj"/>
+                                        </connections>
+                                    </pickerView>
                                 </subviews>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irl-CE-QIa">
@@ -507,6 +507,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="dateDebutPicker" destination="mit-1p-At8" id="7Lv-Gm-xQO"/>
                         <outlet property="dateFinPicker" destination="EtS-vR-LkP" id="rId-kC-xdI"/>

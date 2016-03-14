@@ -30,6 +30,8 @@ class ViewController: UIViewController {
         
         /* A DECOMMENTER POUR DELETE LES CATEGORIES ET A RECOMMENTER APRES */
         //deleteCatgeorie()
+        /* PAREIL POUR LES SERVICES */
+        //deleteServices()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +44,24 @@ class ViewController: UIViewController {
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let contexte: NSManagedObjectContext = appDel.managedObjectContext
         let requete = NSFetchRequest(entityName: "Category")
+        requete.returnsObjectsAsFaults = false
+        do {
+            let resultats = try contexte.executeFetchRequest(requete)
+            if (resultats.count > 0){
+                for res in resultats as! [NSManagedObject] {
+                    contexte.deleteObject(res)
+                }
+                try contexte.save()
+            }
+        } catch {
+            print("Echec de la requête: get")
+        }
+    }
+    func deleteServices(){
+        // Recupérer les services
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let contexte: NSManagedObjectContext = appDel.managedObjectContext
+        let requete = NSFetchRequest(entityName: "Service")
         requete.returnsObjectsAsFaults = false
         do {
             let resultats = try contexte.executeFetchRequest(requete)

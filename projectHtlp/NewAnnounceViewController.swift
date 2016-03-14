@@ -81,20 +81,119 @@ class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPic
     
 
     @IBAction func onClickButton(sender: AnyObject) {
-        print("titre: \(titreTextField.text)")
-        print("categorie: \(selectedCategory)")
-        print("description: \(descriptionTextField.text)")
-        print("début: \(dateDebutPicker.date)")
-        print("fin: \(dateFinPicker.date)")
-        print("temps: \(timeTextField.text)")
+        // réinisialiser les erreurs
+        titreTextField.layer.borderWidth = 0
+        descriptionTextField.layer.borderWidth = 0
+        timeTextField.layer.borderWidth = 0
+        dateDebutPicker.layer.borderWidth = 0
+        dateFinPicker.layer.borderWidth = 0
         
-        /*
-        à vérifier:
-        titre non vide
-        catégorie non nulle
-        description non vide
-        date de début avant date de fin
-        */
+        
+        var error: Bool = false;
+        
+        // vérifier titre, description
+        if(titreTextField.text!.isEmpty) {
+            titreTextField.layer.borderWidth = 2
+            titreTextField.layer.borderColor = UIColor.redColor().CGColor
+            error = true;
+        }
+        if(descriptionTextField.text!.isEmpty) {
+            descriptionTextField.layer.borderWidth = 2
+            descriptionTextField.layer.borderColor = UIColor.redColor().CGColor
+            error = true;
+        }
+        if(timeTextField.text!.isEmpty) {
+            timeTextField.layer.borderWidth = 2
+            timeTextField.layer.borderColor = UIColor.redColor().CGColor
+            error = true;
+        }
+        var timeValueInt: NSNumber
+        timeValueInt = 0
+        if let aux = NSNumberFormatter().numberFromString(timeTextField.text!) {
+            timeValueInt = aux
+        }
+        else {
+            timeTextField.layer.borderWidth = 2
+            timeTextField.layer.borderColor = UIColor.redColor().CGColor
+            error = true;
+        }
+        
+        // vérifier date début avant date fin
+        if( dateDebutPicker.date.timeIntervalSince1970 > dateFinPicker.date.timeIntervalSince1970 ) {
+            dateDebutPicker.layer.borderWidth = 2
+            dateDebutPicker.layer.borderColor = UIColor.redColor().CGColor
+            dateFinPicker.layer.borderWidth = 2
+            dateFinPicker.layer.borderColor = UIColor.redColor().CGColor
+            error = false
+        }
+        
+        
+        // si pas d'erreur, continuer
+        if(!error) {
+            let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context: NSManagedObjectContext = appDel.managedObjectContext
+            
+
+            // récupérer la catégorie
+            var category : AnyObject?
+            category = nil
+            var requete = NSFetchRequest(entityName: "Category")
+            requete.predicate = NSPredicate(format: "name = %@", selectedCategory)
+            do {
+                let resultats = try context.executeFetchRequest(requete)
+                if (resultats.count > 0){
+                    for res in resultats {
+                        category = res
+                    }
+                }
+            } catch {
+                print("Echec de la requête: get")
+            }
+            
+            // récupérer l'utilisateur
+            var user : AnyObject?
+            user = nil
+            let defaults = NSUserDefaults.standardUserDefaults()
+            requete = NSFetchRequest(entityName: "User")
+            requete.predicate = NSPredicate(format: "mail = %@", defaults.stringForKey("mail")!)
+            do {
+                let resultat = try context.executeFetchRequest(requete)
+                if(resultat.count > 0) {
+                    for res in resultat {
+                        user = res
+                    }
+                }
+            }catch{
+                print("Echec de la requete: get")
+            }
+            
+            
+            // créer l'annonce
+            let newEntry = NSEntityDescription.insertNewObjectForEntityForName("Service", inManagedObjectContext: context)
+            newEntry.setValue(titreTextField.text, forKey: "title")
+            newEntry.setValue(descriptionTextField.text, forKey: "desc")
+            newEntry.setValue(dateDebutPicker.date, forKey: "beginDate")
+            newEntry.setValue(dateFinPicker.date, forKey: "endDate")
+            newEntry.setValue(timeValueInt, forKey: "totalTime")
+            newEntry.setValue(category, forKey: "category")
+            newEntry.setValue(user, forKey: "userDonne")
+            
+            do {
+                try context.save()
+                if let resultController = storyboard?.instantiateViewControllerWithIdentifier("accueil") as? AccueilViewController {
+                    presentViewController(resultController, animated: true, completion: nil)
+                } else {
+                    print("Echec de l'ouverture de la vue accueil")
+                }
+            } catch {
+                print("Echec de la requete: save")
+            }
+
+            
+            
+            
+        }
+
     }
     
     
