@@ -70,7 +70,10 @@ class AccueilViewController: UIViewController, UICollectionViewDataSource, UICol
         do {
             let resultats = try context.executeFetchRequest(requete)
             if(resultats.count > 0) {
-                
+                if let resultController = storyboard?.instantiateViewControllerWithIdentifier("searchCategory") as? SearchCategoryViewController {
+                    resultController.category = resultats[0].objectID
+                    presentViewController(resultController, animated: true, completion: nil)
+                }
             }
         } catch {
             print("Echec de la requete: get")

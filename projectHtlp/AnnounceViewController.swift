@@ -33,7 +33,7 @@ class AnnounceViewController: UIViewController {
             titleAnnounce.text = service.valueForKey("title") as? String
             titleCategory.text = service.valueForKey("category")!.valueForKey("name") as? String
             let date = NSDateFormatter()
-            date.dateFormat = "dd/MM/yyy"
+            date.dateFormat = "dd/MM/yyyy"
             dateFinal.text = date.stringFromDate(service.valueForKey("beginDate") as! NSDate)
             dateBegin.text = date.stringFromDate(service.valueForKey("endDate") as! NSDate)
             let time = service.valueForKey("totalTime") as? NSNumber

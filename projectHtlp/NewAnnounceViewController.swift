@@ -89,23 +89,23 @@ class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPic
         dateFinPicker.layer.borderWidth = 0
         
         
-        var error: Bool = false;
+        var error: Bool = false
         
         // vérifier titre, description
         if(titreTextField.text!.isEmpty) {
             titreTextField.layer.borderWidth = 2
             titreTextField.layer.borderColor = UIColor.redColor().CGColor
-            error = true;
+            error = true
         }
         if(descriptionTextField.text!.isEmpty) {
             descriptionTextField.layer.borderWidth = 2
             descriptionTextField.layer.borderColor = UIColor.redColor().CGColor
-            error = true;
+            error = true
         }
         if(timeTextField.text!.isEmpty) {
             timeTextField.layer.borderWidth = 2
             timeTextField.layer.borderColor = UIColor.redColor().CGColor
-            error = true;
+            error = true
         }
         var timeValueInt: NSNumber
         timeValueInt = 0
@@ -115,7 +115,7 @@ class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPic
         else {
             timeTextField.layer.borderWidth = 2
             timeTextField.layer.borderColor = UIColor.redColor().CGColor
-            error = true;
+            error = true
         }
         
         // vérifier date début avant date fin
@@ -124,7 +124,7 @@ class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPic
             dateDebutPicker.layer.borderColor = UIColor.redColor().CGColor
             dateFinPicker.layer.borderWidth = 2
             dateFinPicker.layer.borderColor = UIColor.redColor().CGColor
-            error = false
+            error = true
         }
         
         
