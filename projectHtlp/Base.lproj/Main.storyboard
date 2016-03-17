@@ -91,12 +91,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Rechercher" translatesAutoresizingMaskIntoConstraints="NO" id="aiM-WZ-IU6">
-                                <rect key="frame" x="-4" y="20" width="328" height="44"/>
-                                <color key="barTintColor" red="1" green="0.81803584186373757" blue="0.43520865481209736" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fbi-FL-Sg5">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fbi-FL-Sg5">
                                 <rect key="frame" x="-4" y="64" width="328" height="372"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="jmr-0X-vff">
@@ -137,7 +132,7 @@
                                     <outlet property="delegate" destination="emX-Ul-OMB" id="S2f-Hz-imc"/>
                                 </connections>
                             </collectionView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-Ag-cGL">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-Ag-cGL">
                                 <rect key="frame" x="-4" y="436" width="328" height="44"/>
                                 <items>
                                     <barButtonItem image="user" id="mQF-M3-s9k">
@@ -158,28 +153,35 @@
                                 </items>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNU-AU-qUc">
-                                <rect key="frame" x="137" y="235" width="46" height="30"/>
-                                <state key="normal" title="Recherche"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNU-AU-qUc">
+                                <rect key="frame" x="0.0" y="28" width="320" height="28"/>
+                                <color key="backgroundColor" red="1" green="0.81803584186373757" blue="0.43520865481209736" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                <state key="normal" title="Recherche">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="yPC-an-ajY" kind="show" id="G3I-z5-eLu"/>
+                                    <segue destination="yPC-an-ajY" kind="show" id="vo7-Sv-hom"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aiM-WZ-IU6" firstAttribute="leading" secondItem="sg8-ia-J4e" secondAttribute="leadingMargin" constant="-20" id="0Qr-Gd-Tfu"/>
+                            <constraint firstItem="tNU-AU-qUc" firstAttribute="top" secondItem="Iu5-5F-Gih" secondAttribute="bottom" constant="8" id="481-S1-NMQ"/>
                             <constraint firstItem="Fbi-FL-Sg5" firstAttribute="leading" secondItem="sg8-ia-J4e" secondAttribute="leadingMargin" constant="-20" id="BdH-Vf-xLH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fbi-FL-Sg5" secondAttribute="trailing" constant="-20" id="JTt-74-fvo"/>
+                            <constraint firstItem="tNU-AU-qUc" firstAttribute="centerX" secondItem="sg8-ia-J4e" secondAttribute="centerX" id="Jvw-nb-H9u"/>
                             <constraint firstItem="Wbc-Ag-cGL" firstAttribute="top" secondItem="Fbi-FL-Sg5" secondAttribute="bottom" id="Pda-6w-43g"/>
-                            <constraint firstItem="Fbi-FL-Sg5" firstAttribute="top" secondItem="aiM-WZ-IU6" secondAttribute="bottom" id="XcI-Ik-ZHu"/>
                             <constraint firstItem="Wbc-Ag-cGL" firstAttribute="leading" secondItem="sg8-ia-J4e" secondAttribute="leadingMargin" constant="-20" id="dHd-vo-SbU"/>
                             <constraint firstItem="cTO-yU-O3S" firstAttribute="top" secondItem="Wbc-Ag-cGL" secondAttribute="bottom" id="dkg-re-dLJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aiM-WZ-IU6" secondAttribute="trailing" constant="-20" id="pl6-hC-dqC"/>
+                            <constraint firstItem="tNU-AU-qUc" firstAttribute="width" secondItem="sg8-ia-J4e" secondAttribute="width" id="moZ-Ev-J8c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wbc-Ag-cGL" secondAttribute="trailing" constant="-20" id="vRw-DI-thV"/>
-                            <constraint firstItem="aiM-WZ-IU6" firstAttribute="top" secondItem="Iu5-5F-Gih" secondAttribute="bottom" id="y2n-X7-gTz"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="o0u-6k-vzT"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="moncompteBar" destination="mQF-M3-s9k" id="ZOV-Y3-n8m"/>
@@ -1299,8 +1301,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rPo-53-24Y"/>
-        <segue reference="dQy-nA-bzZ"/>
-        <segue reference="TC9-cJ-Qm6"/>
+        <segue reference="Lcg-4q-ylc"/>
         <segue reference="WDc-4o-WhT"/>
+        <segue reference="TC9-cJ-Qm6"/>
     </inferredMetricsTieBreakers>
 </document>
