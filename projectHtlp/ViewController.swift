@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         //deleteCatgeorie()
         /* PAREIL POUR LES SERVICES */
         //deleteServices()
+        //deleteUsers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,5 +76,24 @@ class ViewController: UIViewController {
             print("Echec de la requête: get")
         }
     }
+    func deleteUsers(){
+        // Recupérer les utilisateurs
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let contexte: NSManagedObjectContext = appDel.managedObjectContext
+        let requete = NSFetchRequest(entityName: "User")
+        requete.returnsObjectsAsFaults = false
+        do {
+            let resultats = try contexte.executeFetchRequest(requete)
+            if (resultats.count > 0){
+                for res in resultats as! [NSManagedObject] {
+                    contexte.deleteObject(res)
+                }
+                try contexte.save()
+            }
+        } catch {
+            print("Echec de la requête: get")
+        }
+    }
+    
 }
 
