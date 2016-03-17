@@ -16,10 +16,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     var searchActive : Bool = false
-    var titles: [String] = []
-    var filtered:[String] = []
-    var ids: [NSManagedObjectID] = []
-    
+    var announces : [(title: String, objectID: NSManagedObjectID)] = []
+    var filtered : [(title: String, objectID: NSManagedObjectID)] = []
     
     
     override func viewDidLoad() {
@@ -37,9 +35,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             let resultats = try contexte.executeFetchRequest(requete)
             if (resultats.count > 0){
                 for res in resultats as! [NSManagedObject] {
-                    titles.append((res.valueForKey("title") as? String)!)
-                    ids.append(res.objectID)
-                    //ids.append((res.valueForKey("objectID") as? NSManagedObjectID)!)
+                    announces.append( (title: (res.valueForKey("title") as? String)!, objectID: res.objectID) )
                 }
             }
         } catch {
@@ -60,8 +56,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func searchBarSearchButtonClicked(searchBar: UISearchBar) { searchActive = false }
     // recherche en live
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        filtered = titles.filter({ (text) -> Bool in
-            let tmp: NSString = text
+        filtered = announces.filter({ (text) -> Bool in
+            let tmp: NSString = text.title
             let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
             return range.location != NSNotFound
         })
@@ -79,14 +75,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         if(searchActive) {
             return filtered.count
         }
-        return titles.count;
+        return announces.count;
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SearchCell")! as UITableViewCell;
         if(searchActive){
-            cell.textLabel?.text = filtered[indexPath.row]
+            cell.textLabel?.text = filtered[indexPath.row].title
         } else {
-            cell.textLabel?.text = titles[indexPath.row];
+            cell.textLabel?.text = announces[indexPath.row].title;
         }
         return cell;
     }
@@ -95,8 +91,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "segueFromSearchtoAnnounce" {
             if let destination = segue.destinationViewController as? AnnounceViewController {
-                if let idIndex = tableView.indexPathForSelectedRow?.row {
-                    destination.announce = ids[idIndex]
+                if(searchActive) {
+                    if let idIndex = tableView.indexPathForSelectedRow?.row {
+                        destination.announce = filtered[idIndex].objectID
+                    }
+                }
+                else {
+                    if let idIndex = tableView.indexPathForSelectedRow?.row {
+                        destination.announce = announces[idIndex].objectID
+                    }
+
                 }
             }
         }
