@@ -764,25 +764,6 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zeh-ct-Dji">
-                                <rect key="frame" x="-4" y="392" width="328" height="44"/>
-                                <items>
-                                    <barButtonItem systemItem="reply" id="fC2-sE-Qap">
-                                        <color key="tintColor" red="1" green="0.062036883260000002" blue="0.1517918966" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="emX-Ul-OMB" kind="show" id="8gM-J3-M82"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mRf-Cl-doW"/>
-                                    <barButtonItem image="add" id="1ep-ir-o0K">
-                                        <color key="tintColor" red="1" green="0.37857353919999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WYp-Sn-C9b"/>
-                                    <barButtonItem title="Avis" id="FVt-DO-f72">
-                                        <color key="tintColor" red="0.18179722866340353" green="0.51040322334911947" blue="0.58965968586387429" alpha="1" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ei5-tI-NqC">
                                 <rect key="frame" x="-4" y="20" width="328" height="41"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="31"/>
@@ -829,6 +810,28 @@
                                     <constraint firstAttribute="height" constant="50" id="ieL-RR-QGr"/>
                                 </constraints>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zeh-ct-Dji">
+                                <rect key="frame" x="-4" y="392" width="328" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="reply" id="fC2-sE-Qap">
+                                        <color key="tintColor" red="1" green="0.062036883260000002" blue="0.1517918966" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="emX-Ul-OMB" kind="show" id="8gM-J3-M82"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mRf-Cl-doW"/>
+                                    <barButtonItem image="add" id="1ep-ir-o0K">
+                                        <color key="tintColor" red="1" green="0.37857353919999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="onClickValidateService:" destination="AYv-xD-tlx" id="siX-6i-DPn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WYp-Sn-C9b"/>
+                                    <barButtonItem title="Avis" id="FVt-DO-f72">
+                                        <color key="tintColor" red="0.18179722866340353" green="0.51040322334911947" blue="0.58965968586387429" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -884,7 +887,7 @@
         <!--Valider service-->
         <scene sceneID="ye0-Bu-QX2">
             <objects>
-                <viewController title="Valider service" id="gVY-pQ-zYc" customClass="ServiceValidateController" customModule="projectHtlp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="validateService" title="Valider service" id="gVY-pQ-zYc" customClass="ValidateServiceController" customModule="projectHtlp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gTL-vv-Qzs"/>
                         <viewControllerLayoutGuide type="bottom" id="3VD-49-NNN"/>
@@ -892,9 +895,79 @@
                     <view key="view" contentMode="scaleToFill" id="FRJ-JT-xzy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Titre annonce" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh6-fm-u24">
+                                <rect key="frame" x="0.0" y="28" width="320" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rew-gf-eiB">
+                                <rect key="frame" x="0.0" y="117" width="320" height="246"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre d'heures demandées" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L6V-MO-jm4">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="gVY-pQ-zYc" id="8WE-Aa-gFC"/>
+                                        </connections>
+                                    </textField>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eVe-6b-2aG">
+                                        <rect key="frame" x="0.0" y="30" width="320" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="479997773.84504998">
+                                            <!--2016-03-18 12:42:53 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="L6V-MO-jm4" firstAttribute="width" secondItem="Rew-gf-eiB" secondAttribute="width" id="AE9-0M-NDh"/>
+                                    <constraint firstItem="eVe-6b-2aG" firstAttribute="width" secondItem="Rew-gf-eiB" secondAttribute="width" id="CSv-dt-kJ3"/>
+                                </constraints>
+                            </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XJq-GS-Qw8">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="reply" id="19I-c2-Pvw">
+                                        <connections>
+                                            <action selector="onClickPrevious:" destination="gVY-pQ-zYc" id="4aU-FL-p1L"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="whS-Hx-aSo"/>
+                                    <barButtonItem title="Valider" id="6H3-lX-f3x">
+                                        <connections>
+                                            <action selector="onClickValidate:" destination="gVY-pQ-zYc" id="eG7-bo-5vM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kx8-6o-9vI">
+                                <rect key="frame" x="139" y="57" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wh6-fm-u24" firstAttribute="width" secondItem="FRJ-JT-xzy" secondAttribute="width" id="1Si-tR-gT0"/>
+                            <constraint firstItem="Rew-gf-eiB" firstAttribute="width" secondItem="FRJ-JT-xzy" secondAttribute="width" id="4rP-bq-CLQ"/>
+                            <constraint firstItem="Rew-gf-eiB" firstAttribute="centerY" secondItem="FRJ-JT-xzy" secondAttribute="centerY" id="7FH-s7-BoF"/>
+                            <constraint firstItem="XJq-GS-Qw8" firstAttribute="width" secondItem="FRJ-JT-xzy" secondAttribute="width" id="cNU-J1-Wfm"/>
+                            <constraint firstItem="XJq-GS-Qw8" firstAttribute="centerX" secondItem="FRJ-JT-xzy" secondAttribute="centerX" id="kHl-xM-4Q4"/>
+                            <constraint firstItem="wh6-fm-u24" firstAttribute="centerX" secondItem="FRJ-JT-xzy" secondAttribute="centerX" id="mtO-ZT-kdh"/>
+                            <constraint firstItem="Kx8-6o-9vI" firstAttribute="width" secondItem="FRJ-JT-xzy" secondAttribute="width" id="sgW-aH-mVB"/>
+                            <constraint firstItem="Kx8-6o-9vI" firstAttribute="centerX" secondItem="FRJ-JT-xzy" secondAttribute="centerX" id="wJV-fM-5uv"/>
+                            <constraint firstItem="Rew-gf-eiB" firstAttribute="centerX" secondItem="FRJ-JT-xzy" secondAttribute="centerX" id="yrG-8R-OBk"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="datePicker" destination="eVe-6b-2aG" id="Axj-gX-cDL"/>
+                        <outlet property="errorLabel" destination="Kx8-6o-9vI" id="e7z-qR-2Z5"/>
+                        <outlet property="label" destination="wh6-fm-u24" id="YK5-k4-Ls1"/>
+                        <outlet property="textField" destination="L6V-MO-jm4" id="srS-4s-ex7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBV-fy-Mcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1413,8 +1486,9 @@
         <image name="user" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WDc-4o-WhT"/>
-        <segue reference="8gM-J3-M82"/>
+        <segue reference="qsO-TL-m9W"/>
         <segue reference="z9u-48-bKC"/>
+        <segue reference="TC9-cJ-Qm6"/>
+        <segue reference="WDc-4o-WhT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -26,7 +26,7 @@ class AnnounceViewController: UIViewController {
     
     @IBOutlet weak var descAnnounce: UITextView!
     
-     var announce: NSManagedObjectID!
+    var announce: NSManagedObjectID!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -183,4 +183,14 @@ class AnnounceViewController: UIViewController {
     }
 
 
+    
+    @IBAction func onClickValidateService(sender: AnyObject) {
+        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("validateService") as? ValidateServiceController {
+            resultController.serviceID = announce
+            presentViewController(resultController, animated: true, completion: nil)
+        } else {
+            print("Echec de l'ouverture de la vue validateService")
+        }
+    }
+    
 }
