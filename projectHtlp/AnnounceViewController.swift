@@ -27,6 +27,7 @@ class AnnounceViewController: UIViewController {
     @IBOutlet weak var descAnnounce: UITextView!
     
     var announce: NSManagedObjectID!
+    var userID: NSManagedObjectID!
 
     override func viewDidLoad() {
         super.viewDidLoad()
