@@ -17,7 +17,7 @@ class AnnounceViewController: UIViewController {
     @IBOutlet weak var dateFinal: UILabel!
     @IBOutlet weak var timeAnnounce: UILabel!
     
-    @IBOutlet weak var nomDonneur: UILabel!
+    @IBOutlet weak var nomDonneur: UIButton!
     @IBOutlet weak var star1: UIImageView!
     @IBOutlet weak var star2: UIImageView!
     @IBOutlet weak var star3: UIImageView!
@@ -44,7 +44,7 @@ class AnnounceViewController: UIViewController {
             dateFinal.text = date.stringFromDate(service.valueForKey("beginDate") as! NSDate)
             dateBegin.text = date.stringFromDate(service.valueForKey("endDate") as! NSDate)
             descAnnounce.text = service.valueForKey("desc") as! String
-            nomDonneur.text = (service.valueForKey("userDonne")!.valueForKey("name") as! String) + " " + (service.valueForKey("userDonne")!.valueForKey("firstname") as! String)
+            nomDonneur.setTitle((service.valueForKey("userDonne")!.valueForKey("name") as! String) + " " + (service.valueForKey("userDonne")!.valueForKey("firstname") as! String), forState: .Normal)
             
             // Time restant
             let time = (service.valueForKey("totalTime") as! NSNumber)
