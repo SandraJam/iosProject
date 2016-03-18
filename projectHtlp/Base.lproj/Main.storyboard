@@ -881,6 +881,25 @@
             </objects>
             <point key="canvasLocation" x="2737" y="-373"/>
         </scene>
+        <!--Valider service-->
+        <scene sceneID="ye0-Bu-QX2">
+            <objects>
+                <viewController title="Valider service" id="gVY-pQ-zYc" customClass="ServiceValidateController" customModule="projectHtlp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gTL-vv-Qzs"/>
+                        <viewControllerLayoutGuide type="bottom" id="3VD-49-NNN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FRJ-JT-xzy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UBV-fy-Mcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3324" y="-373"/>
+        </scene>
         <!--Inscription-->
         <scene sceneID="khh-je-V1W">
             <objects>
@@ -1394,7 +1413,6 @@
         <image name="user" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TC9-cJ-Qm6"/>
         <segue reference="WDc-4o-WhT"/>
         <segue reference="8gM-J3-M82"/>
         <segue reference="z9u-48-bKC"/>
