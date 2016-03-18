@@ -78,6 +78,7 @@ class AnnounceViewController: UIViewController {
                 Récuperer tous les noteRecu d'un user */
                 
             var score = 0.0
+            userID = service.valueForKey("userDonne")?.objectID
             let userD = service.valueForKey("userDonne")?.objectID
             let user = try context.existingObjectWithID(userD!)
             
@@ -146,6 +147,13 @@ class AnnounceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func viewUser(sender: AnyObject) {
+        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("profil") as? ProfilViewController {
+            resultController.idProfil = userID
+            resultController.idAnnounce = announce
+            presentViewController(resultController, animated: true, completion: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation

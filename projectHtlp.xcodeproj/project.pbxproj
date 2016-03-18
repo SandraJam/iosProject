@@ -211,6 +211,7 @@
 				ED94E9921C9AEF7100D876C8 /* SearchViewController.swift in Sources */,
 				ED8EAF761C824475007C3256 /* AccueilViewController.swift in Sources */,
 				EDDDFE8D1C97128200DE5602 /* AnnounceViewController.swift in Sources */,
+				EDDA0B511C9C11180048C9BE /* ProfilViewController.swift in Sources */,
 				EDDDFE8F1C989D7D00DE5602 /* SearchCategoryViewController.swift in Sources */,
 				EDDDFE8B1C96F92800DE5602 /* ModifPictureCompteViewController.swift in Sources */,
 				EDDDFE851C91E56D00DE5602 /* CategoryTableViewCell.swift in Sources */,
