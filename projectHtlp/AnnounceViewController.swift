@@ -16,6 +16,12 @@ class AnnounceViewController: UIViewController {
     @IBOutlet weak var dateBegin: UILabel!
     @IBOutlet weak var dateFinal: UILabel!
     @IBOutlet weak var timeAnnounce: UILabel!
+    @IBOutlet weak var nomDonneur: UILabel!
+    @IBOutlet weak var star1: UIImageView!
+    @IBOutlet weak var star2: UIImageView!
+    @IBOutlet weak var star3: UIImageView!
+    @IBOutlet weak var star4: UIImageView!
+    @IBOutlet weak var star5: UIImageView!
     
     @IBOutlet weak var descAnnounce: UITextView!
     

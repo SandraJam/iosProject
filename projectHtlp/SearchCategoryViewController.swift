@@ -22,7 +22,7 @@ class SearchCategoryViewController: UIViewController {
         do{
             let cat = try context.existingObjectWithID(category)
             let requete = NSFetchRequest(entityName: "Service")
-            requete.predicate = NSPredicate(format: "categorie = %@", cat)
+            requete.predicate = NSPredicate(format: "category = %@", cat)
             do {
                 announces = try context.executeFetchRequest(requete)
             } catch {
@@ -69,18 +69,18 @@ class SearchCategoryViewController: UIViewController {
         
         let date = NSDateFormatter()
         date.dateFormat = "dd/MM/yyyy"
-        cell.detailTextLabel!.text = date.stringFromDate(announces[indexPath.item].valueForKey("endDate") as! NSDate)
-        cell.textLabel!.text = date.stringFromDate(announces[indexPath.item].valueForKey("beginDate") as! NSDate)
-        
+        cell.detailTextLabel!.text = (date.stringFromDate(announces[indexPath.item].valueForKey("endDate") as! NSDate))+" au "+(date.stringFromDate(announces[indexPath.item].valueForKey("beginDate") as! NSDate))
+
+        cell.textLabel!.text = announces[indexPath.item].valueForKey("title") as? String
         return cell
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool{
-        return true
-    }
-    
-    func tableView (tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
-        
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("announce") as? AnnounceViewController {
+            resultController.announce = announces[indexPath.item].objectID
+            presentViewController(resultController, animated: true, completion: nil)
+        }
+
     }
 
 }
