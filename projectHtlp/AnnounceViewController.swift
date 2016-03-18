@@ -16,6 +16,7 @@ class AnnounceViewController: UIViewController {
     @IBOutlet weak var dateBegin: UILabel!
     @IBOutlet weak var dateFinal: UILabel!
     @IBOutlet weak var timeAnnounce: UILabel!
+    
     @IBOutlet weak var nomDonneur: UILabel!
     @IBOutlet weak var star1: UIImageView!
     @IBOutlet weak var star2: UIImageView!
@@ -42,9 +43,99 @@ class AnnounceViewController: UIViewController {
             date.dateFormat = "dd/MM/yyyy"
             dateFinal.text = date.stringFromDate(service.valueForKey("beginDate") as! NSDate)
             dateBegin.text = date.stringFromDate(service.valueForKey("endDate") as! NSDate)
-            let time = service.valueForKey("totalTime") as? NSNumber
-            timeAnnounce.text = (time?.stringValue)! + ("h à offrir")
             descAnnounce.text = service.valueForKey("desc") as! String
+            nomDonneur.text = (service.valueForKey("userDonne")!.valueForKey("name") as! String) + " " + (service.valueForKey("userDonne")!.valueForKey("firstname") as! String)
+            
+            // Time restant
+            let time = (service.valueForKey("totalTime") as! NSNumber)
+            var timeTmp: NSNumber
+            let requete = NSFetchRequest(entityName: "ServiceDonne")
+            requete.returnsObjectsAsFaults = false
+            requete.predicate = NSPredicate(format: "service = %@", service)
+            var t = time.floatValue
+            do {
+                let resultats = try context.executeFetchRequest(requete)
+                if (resultats.count > 0){
+                    for res in resultats as! [NSManagedObject] {
+                        timeTmp = (res.valueForKey("time") as? NSNumber)!
+                        t = t - timeTmp.floatValue
+                    }
+                }
+            } catch {
+                print("Echec de la requête: get")
+            }
+            
+            let nf = NSNumberFormatter()
+            nf.numberStyle = .DecimalStyle
+            // Configure the number formatter to your liking
+            let s2 = nf.stringFromNumber(t)
+            timeAnnounce.text = s2! + ("h à offrir")
+            
+            
+            // Star
+            
+            /*
+                Récuperer tous les noteRecu d'un user */
+                
+            var score = 0.0
+            let userD = service.valueForKey("userDonne")?.objectID
+            let user = try context.existingObjectWithID(userD!)
+            
+            let req = NSFetchRequest(entityName: "Avis")
+            req.returnsObjectsAsFaults = false
+            req.predicate = NSPredicate(format: "receveurAvis = %@", user)
+            do {
+                let notes = try context.executeFetchRequest(req)
+                if (notes.count > 0){
+                    for note in notes as! [NSManagedObject] {
+                        score = score + (note.valueForKey("note") as! NSNumber).doubleValue
+                    }
+                    score = score / Double(notes.count)
+                }
+                if (score  == 5.0){
+                    star5.image = UIImage(named: "star")
+                }else if (score > 4.4){
+                    star5.image = UIImage(named: "star_half")
+                }else{
+                    star5.image = UIImage(named: "star_empty")
+                }
+                
+                if (score  == 4.0){
+                    star4.image = UIImage(named: "star")
+                }else if (score > 3.4){
+                    star4.image = UIImage(named: "star_half")
+                }else{
+                    star4.image = UIImage(named: "star_empty")
+                }
+                
+                if (score  == 3.0){
+                    star3.image = UIImage(named: "star")
+                }else if (score > 2.4){
+                    star3.image = UIImage(named: "star_half")
+                }else{
+                    star3.image = UIImage(named: "star_empty")
+                }
+                
+                if (score  == 2.0){
+                    star2.image = UIImage(named: "star")
+                }else if (score > 1.4){
+                    star2.image = UIImage(named: "star_half")
+                }else{
+                    star2.image = UIImage(named: "star_empty")
+                }
+                
+                if (score  == 1.0){
+                    star1.image = UIImage(named: "star")
+                }else if (score > 0.4){
+                    star1.image = UIImage(named: "star_half")
+                }else{
+                    star1.image = UIImage(named: "star_empty")
+                }
+                
+                
+            } catch {
+                print("Echec de la requête: get")
+            }
         } catch {
             print("Echec de la requete: get")
         }
