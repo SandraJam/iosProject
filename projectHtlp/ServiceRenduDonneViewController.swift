@@ -1,5 +1,5 @@
 //
-//  MesServiceRenduViewController.swift
+//  ServiceRenduDonneViewController.swift
 //  projectHtlp
 //
 //  Created by Moi on 19/03/2016.
@@ -9,73 +9,41 @@
 import UIKit
 import CoreData
 
-class MesServiceRenduViewController: UIViewController {
+class ServiceRenduDonneViewController: UIViewController {
+
     
     var icons : [String] = []
     var colors : [String] = []
     var titles : [String] = []
     var details : [String] = []
     var times : [String] = []
-    var ids : [NSManagedObjectID] = []
-    var userId : NSManagedObjectID!
-
+    var serviceId : NSManagedObjectID!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaults = NSUserDefaults.standardUserDefaults()
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context: NSManagedObjectContext = appDel.managedObjectContext
         
-        let requete = NSFetchRequest(entityName: "User")
-        requete.predicate = NSPredicate(format: "mail = %@", defaults.stringForKey("mail")!)
-        do {
-            let resultat = try context.executeFetchRequest(requete)
-            if(resultat.count > 0) {
-                userId = resultat[0].objectID
-            }
-        }catch{
-            print("Echec de la requete: get")
-        }
-        
         do{
-            let user = try context.existingObjectWithID(userId)
-            let requete2 = NSFetchRequest(entityName: "Service")
-            requete2.predicate = NSPredicate(format: "userDonne = %@", user)
+            let service = try context.existingObjectWithID(serviceId)
+            let requete2 = NSFetchRequest(entityName: "ServiceDonne")
+            requete2.predicate = NSPredicate(format: "service = %@", service)
             
             do {
                 let resultats = try context.executeFetchRequest(requete2)
                 if resultats.count > 0 {
                     for resultat in resultats as! [NSManagedObject] {
-                        icons.append((resultat.valueForKey("category")!.valueForKey("icon") as? String)!)
-                        colors.append((resultat.valueForKey("category")!.valueForKey("color") as? String)!)
-                        titles.append((resultat.valueForKey("title") as? String)!)
-                        ids.append(resultat.objectID)
+                        icons.append((resultat.valueForKey("service")!.valueForKey("category")!.valueForKey("icon") as? String)!)
+                        colors.append((resultat.valueForKey("service")!.valueForKey("category")!.valueForKey("color") as? String)!)
+                        titles.append((resultat.valueForKey("service")!.valueForKey("title") as? String)!)
                         
                         let date = NSDateFormatter()
                         date.dateFormat = "dd/MM/yyyy"
-                        details.append(date.stringFromDate(resultat.valueForKey("beginDate") as! NSDate)+" au "+date.stringFromDate(resultat.valueForKey("endDate") as! NSDate))
-                        
-                        // Time restant
-                        let time = (resultat.valueForKey("totalTime") as! NSNumber)
-                        var timeTmp: NSNumber
-                        let requete = NSFetchRequest(entityName: "ServiceDonne")
-                        requete.returnsObjectsAsFaults = false
-                        requete.predicate = NSPredicate(format: "service = %@", resultat)
-                        var t = time.floatValue
-                        do {
-                            let resultats = try context.executeFetchRequest(requete)
-                            if (resultats.count > 0){
-                                for res in resultats as! [NSManagedObject] {
-                                    timeTmp = (res.valueForKey("time") as? NSNumber)!
-                                    t = t - timeTmp.floatValue
-                                }
-                            }
-                        } catch {
-                            print("Echec de la requête: get")
-                        }
+                        details.append(date.stringFromDate(resultat.valueForKey("date") as! NSDate)+" "+(resultat.valueForKey("userRecoit")!.valueForKey("firstname") as? String)!+" "+(resultat.valueForKey("userRecoit")!.valueForKey("name") as? String)!)
                         
                         let nf = NSNumberFormatter()
                         nf.numberStyle = .DecimalStyle
-                        let s2 = nf.stringFromNumber(t)
+                        let s2 = nf.stringFromNumber(resultat.valueForKey("time") as! NSNumber)
                         times.append(s2! + ("h"))
                     }
                 }
@@ -86,25 +54,25 @@ class MesServiceRenduViewController: UIViewController {
             print("Echec de la requête: get")
         }
         
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -118,7 +86,7 @@ class MesServiceRenduViewController: UIViewController {
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> ServiceTableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Gerard", forIndexPath: indexPath)as! ServiceTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Fernand", forIndexPath: indexPath)as! ServiceTableViewCell
         
         cell.imageCategory.image = UIImage(named: self.icons[indexPath.item])
         cell.titleService.text = self.titles[indexPath.item]
@@ -127,14 +95,6 @@ class MesServiceRenduViewController: UIViewController {
         cell.timeService.text = self.times[indexPath.item]
         
         return cell
-    }
-    
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("serviceDonneRendu") as? ServiceRenduDonneViewController {
-            resultController.serviceId = ids[indexPath.item]
-            presentViewController(resultController, animated: true, completion: nil)
-        }
-        
     }
     
     // Creates a UIColor from a Hex string.
@@ -161,4 +121,6 @@ class MesServiceRenduViewController: UIViewController {
         
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
     }
+
+
 }
