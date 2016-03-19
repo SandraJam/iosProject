@@ -18,6 +18,9 @@
 		ED5E2DB81C9D4DEA00518E62 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E2DB71C9D4DEA00518E62 /* ServiceTableViewCell.swift */; };
 		ED5E2DBA1C9D707800518E62 /* ServiceRenduDonneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E2DB91C9D707800518E62 /* ServiceRenduDonneViewController.swift */; };
 		ED5E2DBC1C9D709000518E62 /* NewAvisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E2DBB1C9D709000518E62 /* NewAvisViewController.swift */; };
+		ED5E2DBE1C9D7D7B00518E62 /* ChoiceMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E2DBD1C9D7D7B00518E62 /* ChoiceMapViewController.swift */; };
+		ED5E2DC01C9D89E100518E62 /* GeoResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E2DBF1C9D89E100518E62 /* GeoResultViewController.swift */; };
+		ED5E2DC21C9D8C2500518E62 /* ListResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E2DC11C9D8C2500518E62 /* ListResultViewController.swift */; };
 		ED7C9FA11C899EC9004FF4A4 /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C9FA01C899EC9004FF4A4 /* NewCategoryViewController.swift */; };
 		ED89AD011C7F672800EB6668 /* ConnexionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89AD001C7F672800EB6668 /* ConnexionViewController.swift */; };
 		ED89AD031C7F676100EB6668 /* InscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89AD021C7F676100EB6668 /* InscriptionViewController.swift */; };
@@ -51,6 +54,9 @@
 		ED5E2DB71C9D4DEA00518E62 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
 		ED5E2DB91C9D707800518E62 /* ServiceRenduDonneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRenduDonneViewController.swift; sourceTree = "<group>"; };
 		ED5E2DBB1C9D709000518E62 /* NewAvisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAvisViewController.swift; sourceTree = "<group>"; };
+		ED5E2DBD1C9D7D7B00518E62 /* ChoiceMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceMapViewController.swift; sourceTree = "<group>"; };
+		ED5E2DBF1C9D89E100518E62 /* GeoResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoResultViewController.swift; sourceTree = "<group>"; };
+		ED5E2DC11C9D8C2500518E62 /* ListResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResultViewController.swift; sourceTree = "<group>"; };
 		ED7C9FA01C899EC9004FF4A4 /* NewCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		ED89AD001C7F672800EB6668 /* ConnexionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnexionViewController.swift; sourceTree = "<group>"; };
 		ED89AD021C7F676100EB6668 /* InscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InscriptionViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +144,9 @@
 				ED5E2DB71C9D4DEA00518E62 /* ServiceTableViewCell.swift */,
 				ED5E2DB91C9D707800518E62 /* ServiceRenduDonneViewController.swift */,
 				ED5E2DBB1C9D709000518E62 /* NewAvisViewController.swift */,
+				ED5E2DBD1C9D7D7B00518E62 /* ChoiceMapViewController.swift */,
+				ED5E2DBF1C9D89E100518E62 /* GeoResultViewController.swift */,
+				ED5E2DC11C9D8C2500518E62 /* ListResultViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -220,6 +229,7 @@
 				0C45F3351C7F5D6E0009A19E /* ViewController.swift in Sources */,
 				EDDDFE831C91E34B00DE5602 /* CategoriesTableViewController.swift in Sources */,
 				EDDDFE891C96F91600DE5602 /* ModifCompteViewController.swift in Sources */,
+				ED5E2DC21C9D8C2500518E62 /* ListResultViewController.swift in Sources */,
 				0C45F3331C7F5D6E0009A19E /* AppDelegate.swift in Sources */,
 				EDDDFE871C92049700DE5602 /* CategoriesIconViewController.swift in Sources */,
 				EDDDFE811C909F3500DE5602 /* CompteViewController.swift in Sources */,
@@ -227,6 +237,7 @@
 				ED5E2DBA1C9D707800518E62 /* ServiceRenduDonneViewController.swift in Sources */,
 				0C45F33B1C7F5D6E0009A19E /* projectHtlp.xcdatamodeld in Sources */,
 				EDFD75361C90347D0016E1F0 /* CategoryViewCellCollectionViewCell.swift in Sources */,
+				ED5E2DBE1C9D7D7B00518E62 /* ChoiceMapViewController.swift in Sources */,
 				ED94E9941C9C100E00D876C8 /* ServiceValidateController.swift in Sources */,
 				ED5E2DB81C9D4DEA00518E62 /* ServiceTableViewCell.swift in Sources */,
 				ED94E9921C9AEF7100D876C8 /* SearchViewController.swift in Sources */,
@@ -235,6 +246,7 @@
 				ED5E2DB21C9D49E500518E62 /* MesServiceRenduViewController.swift in Sources */,
 				EDDA0B511C9C11180048C9BE /* ProfilViewController.swift in Sources */,
 				EDDDFE8F1C989D7D00DE5602 /* SearchCategoryViewController.swift in Sources */,
+				ED5E2DC01C9D89E100518E62 /* GeoResultViewController.swift in Sources */,
 				EDDDFE8B1C96F92800DE5602 /* ModifPictureCompteViewController.swift in Sources */,
 				EDDDFE851C91E56D00DE5602 /* CategoryTableViewCell.swift in Sources */,
 				ED5E2DB41C9D4A1600518E62 /* MesServiceRecuViewController.swift in Sources */,

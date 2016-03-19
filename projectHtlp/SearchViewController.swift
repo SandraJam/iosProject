@@ -16,8 +16,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     var searchActive : Bool = false
-    var announces : [(title: String, objectID: NSManagedObjectID)] = []
-    var filtered : [(title: String, objectID: NSManagedObjectID)] = []
+    var announces : [(title: String, color: String, objectID: NSManagedObjectID)] = []
+    var filtered : [(title: String, color: String, objectID: NSManagedObjectID)] = []
     
     
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             let resultats = try contexte.executeFetchRequest(requete)
             if (resultats.count > 0){
                 for res in resultats as! [NSManagedObject] {
-                    announces.append( (title: (res.valueForKey("title") as? String)!, objectID: res.objectID) )
+                    announces.append( (title: (res.valueForKey("title") as? String)!, color: (res.valueForKey("category")!.valueForKey("color") as? String)!, objectID: res.objectID) )
                 }
             }
         } catch {
@@ -81,8 +81,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("SearchCell")! as UITableViewCell;
         if(searchActive){
             cell.textLabel?.text = filtered[indexPath.row].title
+            cell.backgroundColor = colorWithHexString(filtered[indexPath.item].color)
         } else {
             cell.textLabel?.text = announces[indexPath.row].title;
+            cell.backgroundColor = colorWithHexString(announces[indexPath.item].color)
         }
         return cell;
     }
@@ -104,6 +106,31 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         }
+    }
+
+    // Creates a UIColor from a Hex string.
+    func colorWithHexString (hex:String) -> UIColor {
+        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
+        
+        if (cString.hasPrefix("#")) {
+            cString = (cString as NSString).substringFromIndex(1)
+        }
+        
+        if (cString.characters.count != 6) {
+            return UIColor.grayColor()
+        }
+        
+        let rString = (cString as NSString).substringToIndex(2)
+        let gString = ((cString as NSString).substringFromIndex(2) as NSString).substringToIndex(2)
+        let bString = ((cString as NSString).substringFromIndex(4) as NSString).substringToIndex(2)
+        
+        var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
+        NSScanner(string: rString).scanHexInt(&r)
+        NSScanner(string: gString).scanHexInt(&g)
+        NSScanner(string: bString).scanHexInt(&b)
+        
+        
+        return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
     }
 
 }
