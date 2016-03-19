@@ -7,29 +7,109 @@
 //
 
 import UIKit
+import CoreData
 
 class NewAvisViewController: UIViewController {
+    @IBOutlet weak var star3: UIButton!
+    @IBOutlet weak var star2: UIButton!
+    @IBOutlet weak var star1: UIButton!
+    @IBOutlet weak var star4: UIButton!
+    @IBOutlet weak var star5: UIButton!
 
+    @IBOutlet weak var descAvis: UITextView!
+    
+    var note: NSNumber = 0
+    
+    var servicedonneId: NSManagedObjectID!
+    var donneurId: NSManagedObjectID!
+    var receveurId: NSManagedObjectID!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
+    @IBAction func goAnnounce(sender: AnyObject) {
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        
+        do {
+            let service = try context.existingObjectWithID(servicedonneId)
+            let donneur = try context.existingObjectWithID(donneurId)
+            let receveur = try context.existingObjectWithID(receveurId)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+            let newEntry = NSEntityDescription.insertNewObjectForEntityForName("Avis", inManagedObjectContext: context)
+                
+            newEntry.setValue(note, forKey: "note")
+            newEntry.setValue(descAvis.text, forKey: "text")
+            newEntry.setValue(service, forKey: "service")
+            newEntry.setValue(donneur, forKey: "donneurAvis")
+            newEntry.setValue(receveur, forKey: "receveurAvis")
+            
+            
+            do {
+                try context.save()
+                if let resultController = storyboard?.instantiateViewControllerWithIdentifier("moncompte") as? CompteViewController {
+                    presentViewController(resultController, animated: true, completion: nil)
+                }
+            } catch {
+                print("Echec de la requete: save")
+            }
+        } catch {
+            print("Echec de la requete: get")
+        }
+
     }
-    */
+    
+    @IBAction func star1Click(sender: AnyObject) {
+        star1.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        star2.setImage(UIImage(named: "star_empty"), forState: UIControlState.Normal)
+        star3.setImage(UIImage(named: "star_empty"), forState: UIControlState.Normal)
+        star4.setImage(UIImage(named: "star_empty"), forState: UIControlState.Normal)
+        star5.setImage(UIImage(named: "star_empty"), forState: UIControlState.Normal)
+        note = 1
+    }
+    
+    @IBAction func star2Click(sender: AnyObject) {
+        star1.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        star2.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        star3.setImage(UIImage(named: "star_empty"), forState: UIControlState.Normal)
+        star4.setImage(UIImage(named: "star_empty"), forState: UIControlState.Normal)
+        star5.setImage(UIImage(named: "star_empty"), forState: UIControlState.Normal)
+        note = 2
+    }
+    
+    @IBAction func star3Click(sender: AnyObject) {
+        star1.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        star2.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        star3.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        
+        star4.setImage(UIImage(named: "star_empty"), forState: UIControlState.Normal)
+        star5.setImage(UIImage(named: "star_empty"), forState: UIControlState.Normal)
+        note = 3
+    }
+    
+    @IBAction func star4Click(sender: AnyObject) {
+        star1.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        star2.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        star3.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        star4.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        
+        star5.setImage(UIImage(named: "star_empty"), forState: UIControlState.Normal)
+        note = 4
+    }
+    
+    @IBAction func star5Click(sender: AnyObject) {
+        star1.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        star2.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        star3.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        star4.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        star5.setImage(UIImage(named: "star"), forState: UIControlState.Normal)
+        note = 5
+    }
 
 }

@@ -16,6 +16,7 @@ class MesServiceRecuViewController: UIViewController {
     var titles : [String] = []
     var details : [String] = []
     var times : [String] = []
+    var resultats : [AnyObject] = []
     var userId : NSManagedObjectID!
     
     override func viewDidLoad() {
@@ -41,7 +42,7 @@ class MesServiceRecuViewController: UIViewController {
             requete2.predicate = NSPredicate(format: "userRecoit = %@", user)
             
             do {
-                let resultats = try context.executeFetchRequest(requete2)
+                resultats = try context.executeFetchRequest(requete2)
                 if resultats.count > 0 {
                     for resultat in resultats as! [NSManagedObject] {
                         icons.append((resultat.valueForKey("service")!.valueForKey("category")!.valueForKey("icon") as? String)!)
@@ -106,6 +107,16 @@ class MesServiceRecuViewController: UIViewController {
         cell.timeService.text = self.times[indexPath.item]
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("avis") as? NewAvisViewController {
+            resultController.servicedonneId = resultats[indexPath.item].objectID
+            resultController.receveurId = resultats[indexPath.item].valueForKey("service")!.valueForKey("userDonne")!.objectID
+            resultController.donneurId = resultats[indexPath.item].valueForKey("userRecoit")!.objectID
+            presentViewController(resultController, animated: true, completion: nil)
+        }
+        
     }
     
     // Creates a UIColor from a Hex string.
