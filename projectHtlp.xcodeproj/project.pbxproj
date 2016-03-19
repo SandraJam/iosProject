@@ -19,8 +19,8 @@
 		ED8EAF761C824475007C3256 /* AccueilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EAF751C824475007C3256 /* AccueilViewController.swift */; };
 		ED8EAF781C824653007C3256 /* NewAnnounceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EAF771C824653007C3256 /* NewAnnounceViewController.swift */; };
 		ED94E9921C9AEF7100D876C8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94E9911C9AEF7100D876C8 /* SearchViewController.swift */; };
-		ED94E9981C9C188400D876C8 /* ValidateServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94E9971C9C188400D876C8 /* ValidateServiceController.swift */; };
-		EDDA0B531C9C1BEE0048C9BE /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA0B521C9C1BEE0048C9BE /* ProfilViewController.swift */; };
+		ED94E9941C9C100E00D876C8 /* ServiceValidateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94E9931C9C100E00D876C8 /* ServiceValidateController.swift */; };
+		EDDA0B511C9C11180048C9BE /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA0B501C9C11180048C9BE /* ProfilViewController.swift */; };
 		EDDDFE811C909F3500DE5602 /* CompteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE801C909F3500DE5602 /* CompteViewController.swift */; };
 		EDDDFE831C91E34B00DE5602 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE821C91E34B00DE5602 /* CategoriesTableViewController.swift */; };
 		EDDDFE851C91E56D00DE5602 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE841C91E56D00DE5602 /* CategoryTableViewCell.swift */; };
@@ -47,8 +47,8 @@
 		ED8EAF751C824475007C3256 /* AccueilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccueilViewController.swift; sourceTree = "<group>"; };
 		ED8EAF771C824653007C3256 /* NewAnnounceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAnnounceViewController.swift; sourceTree = "<group>"; };
 		ED94E9911C9AEF7100D876C8 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		ED94E9971C9C188400D876C8 /* ValidateServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateServiceController.swift; sourceTree = "<group>"; };
-		EDDA0B521C9C1BEE0048C9BE /* ProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
+		ED94E9931C9C100E00D876C8 /* ServiceValidateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceValidateController.swift; sourceTree = "<group>"; };
+		EDDA0B501C9C11180048C9BE /* ProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		EDDDFE801C909F3500DE5602 /* CompteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompteViewController.swift; sourceTree = "<group>"; };
 		EDDDFE821C91E34B00DE5602 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		EDDDFE841C91E56D00DE5602 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -114,7 +114,6 @@
 				ED7C9FA01C899EC9004FF4A4 /* NewCategoryViewController.swift */,
 				EDFD75351C90347C0016E1F0 /* CategoryViewCellCollectionViewCell.swift */,
 				EDDDFE821C91E34B00DE5602 /* CategoriesTableViewController.swift */,
-				EDDA0B521C9C1BEE0048C9BE /* ProfilViewController.swift */,
 				EDDDFE841C91E56D00DE5602 /* CategoryTableViewCell.swift */,
 				EDDDFE861C92049700DE5602 /* CategoriesIconViewController.swift */,
 				EDDDFE881C96F91600DE5602 /* ModifCompteViewController.swift */,
@@ -122,7 +121,8 @@
 				EDDDFE8C1C97128200DE5602 /* AnnounceViewController.swift */,
 				EDDDFE8E1C989D7D00DE5602 /* SearchCategoryViewController.swift */,
 				ED94E9911C9AEF7100D876C8 /* SearchViewController.swift */,
-				ED94E9971C9C188400D876C8 /* ValidateServiceController.swift */,
+				ED94E9931C9C100E00D876C8 /* ServiceValidateController.swift */,
+				EDDA0B501C9C11180048C9BE /* ProfilViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -209,12 +209,12 @@
 				EDDDFE871C92049700DE5602 /* CategoriesIconViewController.swift in Sources */,
 				EDDDFE811C909F3500DE5602 /* CompteViewController.swift in Sources */,
 				0C45F33B1C7F5D6E0009A19E /* projectHtlp.xcdatamodeld in Sources */,
-				ED94E9981C9C188400D876C8 /* ValidateServiceController.swift in Sources */,
 				EDFD75361C90347D0016E1F0 /* CategoryViewCellCollectionViewCell.swift in Sources */,
+				ED94E9941C9C100E00D876C8 /* ServiceValidateController.swift in Sources */,
 				ED94E9921C9AEF7100D876C8 /* SearchViewController.swift in Sources */,
 				ED8EAF761C824475007C3256 /* AccueilViewController.swift in Sources */,
 				EDDDFE8D1C97128200DE5602 /* AnnounceViewController.swift in Sources */,
-				EDDA0B531C9C1BEE0048C9BE /* ProfilViewController.swift in Sources */,
+				EDDA0B511C9C11180048C9BE /* ProfilViewController.swift in Sources */,
 				EDDDFE8F1C989D7D00DE5602 /* SearchCategoryViewController.swift in Sources */,
 				EDDDFE8B1C96F92800DE5602 /* ModifPictureCompteViewController.swift in Sources */,
 				EDDDFE851C91E56D00DE5602 /* CategoryTableViewCell.swift in Sources */,
