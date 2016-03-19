@@ -1058,7 +1058,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Titre annonce" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfF-iO-hBk">
                                 <rect key="frame" x="0.0" y="20" width="320" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Message d'erreur" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcT-do-8ZA">
@@ -1238,6 +1238,218 @@
             </objects>
             <point key="canvasLocation" x="1386" y="957"/>
         </scene>
+        <!--Mes Service Recu View Controller-->
+        <scene sceneID="Lzm-Uv-ifn">
+            <objects>
+                <viewController id="1NJ-D6-WPv" customClass="MesServiceRecuViewController" customModule="projectHtlp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lPK-OA-dhY"/>
+                        <viewControllerLayoutGuide type="bottom" id="AYZ-rn-oA2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2KB-av-Hue">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3m1-G0-I91">
+                                <rect key="frame" x="-4" y="436" width="328" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="reply" id="rXi-wD-1jY">
+                                        <color key="tintColor" red="1" green="0.062036883260000002" blue="0.1517918966" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="a7h-oz-UDy" kind="show" id="KFs-S8-H22"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MtA-0O-EtH">
+                                <rect key="frame" x="-4" y="20" width="328" height="416"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Guy" id="WMR-op-fx2" customClass="ServiceTableViewCell" customModule="projectHtlp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="328" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WMR-op-fx2" id="SDR-cR-ETR">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XJb-kk-rcI">
+                                                    <rect key="frame" x="8" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="hF4-oz-9qy"/>
+                                                        <constraint firstAttribute="width" constant="44" id="ofn-QY-ZCv"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titre service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vP-aZ-epr">
+                                                    <rect key="frame" x="56" y="-2" width="264" height="28"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
+                                                    <color key="textColor" red="0.11160370579999999" green="0.31181171819999998" blue="0.3646515052" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bD-6o-s7Z">
+                                                    <rect key="frame" x="56" y="27" width="200" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="QEk-2g-YOs"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                                    <color key="textColor" red="0.11160370579999999" green="0.31181171819999998" blue="0.3646515052" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0h" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrO-jp-0W8">
+                                                    <rect key="frame" x="258" y="27" width="20" height="23"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" red="0.11160370579999999" green="0.31181171819999998" blue="0.3646515052" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4vP-aZ-epr" firstAttribute="top" secondItem="SDR-cR-ETR" secondAttribute="topMargin" constant="-10" id="D1D-Yf-2Nm"/>
+                                                <constraint firstItem="4vP-aZ-epr" firstAttribute="leading" secondItem="XJb-kk-rcI" secondAttribute="trailing" constant="4" id="DjN-vA-e2l"/>
+                                                <constraint firstItem="4vP-aZ-epr" firstAttribute="trailing" secondItem="SDR-cR-ETR" secondAttribute="trailingMargin" id="LKk-VQ-w8i"/>
+                                                <constraint firstItem="XJb-kk-rcI" firstAttribute="top" secondItem="SDR-cR-ETR" secondAttribute="topMargin" constant="-8" id="Pkr-04-zo0"/>
+                                                <constraint firstItem="XJb-kk-rcI" firstAttribute="leading" secondItem="SDR-cR-ETR" secondAttribute="leadingMargin" id="VUm-Mw-h8R"/>
+                                                <constraint firstItem="9bD-6o-s7Z" firstAttribute="top" secondItem="4vP-aZ-epr" secondAttribute="bottom" constant="1" id="hdN-0X-JV6"/>
+                                                <constraint firstItem="FrO-jp-0W8" firstAttribute="leading" secondItem="9bD-6o-s7Z" secondAttribute="trailing" constant="2" id="kI2-10-nfD"/>
+                                                <constraint firstItem="FrO-jp-0W8" firstAttribute="top" secondItem="4vP-aZ-epr" secondAttribute="bottom" constant="1" id="kpL-IW-meP"/>
+                                                <constraint firstItem="9bD-6o-s7Z" firstAttribute="leading" secondItem="XJb-kk-rcI" secondAttribute="trailing" constant="4" id="yXn-11-v34"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageCategory" destination="XJb-kk-rcI" id="6PC-Ay-LQE"/>
+                                            <outlet property="otherService" destination="9bD-6o-s7Z" id="ujm-NE-J8E"/>
+                                            <outlet property="timeService" destination="FrO-jp-0W8" id="tPZ-vv-F7v"/>
+                                            <outlet property="titleService" destination="4vP-aZ-epr" id="NdN-p8-TOr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="1NJ-D6-WPv" id="zaW-xR-Rhm"/>
+                                    <outlet property="delegate" destination="1NJ-D6-WPv" id="xl4-D0-HNO"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3m1-G0-I91" firstAttribute="top" secondItem="MtA-0O-EtH" secondAttribute="bottom" id="HBB-vH-EoK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3m1-G0-I91" secondAttribute="trailing" constant="-20" id="Hkj-4x-byP"/>
+                            <constraint firstItem="3m1-G0-I91" firstAttribute="leading" secondItem="2KB-av-Hue" secondAttribute="leadingMargin" constant="-20" id="esH-EZ-jBN"/>
+                            <constraint firstItem="MtA-0O-EtH" firstAttribute="leading" secondItem="2KB-av-Hue" secondAttribute="leadingMargin" constant="-20" id="g1G-tM-mwm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MtA-0O-EtH" secondAttribute="trailing" constant="-20" id="oTL-cW-YB3"/>
+                            <constraint firstItem="MtA-0O-EtH" firstAttribute="top" secondItem="lPK-OA-dhY" secondAttribute="bottom" id="pCC-zP-vJR"/>
+                            <constraint firstItem="AYZ-rn-oA2" firstAttribute="top" secondItem="3m1-G0-I91" secondAttribute="bottom" id="sGq-xB-Ggb"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ob7-hS-fMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="793" y="1575"/>
+        </scene>
+        <!--Mes Service Rendu View Controller-->
+        <scene sceneID="LKp-JN-SQ5">
+            <objects>
+                <viewController id="OWo-jB-5f2" customClass="MesServiceRenduViewController" customModule="projectHtlp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dcY-Wc-bmU"/>
+                        <viewControllerLayoutGuide type="bottom" id="AzX-e8-gWq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="San-u6-ufa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qep-oL-Ozb">
+                                <rect key="frame" x="-4" y="436" width="328" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="reply" id="SNu-DL-y6i">
+                                        <color key="tintColor" red="1" green="0.062036883260000002" blue="0.1517918966" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="a7h-oz-UDy" kind="show" id="Gs5-mf-VNe"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VjP-lY-qDY">
+                                <rect key="frame" x="-4" y="20" width="328" height="416"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Gerard" id="Mv7-20-xpO" customClass="ServiceTableViewCell" customModule="projectHtlp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="328" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mv7-20-xpO" id="pf2-Dw-qoi">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5va-a2-KXX">
+                                                    <rect key="frame" x="8" y="0.0" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="8MF-3n-KdP"/>
+                                                        <constraint firstAttribute="width" constant="44" id="NsU-dW-KG0"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titre service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLu-BE-pJX">
+                                                    <rect key="frame" x="56" y="-2" width="264" height="28"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
+                                                    <color key="textColor" red="0.11160370579937819" green="0.31181171822959564" blue="0.36465150523560208" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2f-Mm-DZe">
+                                                    <rect key="frame" x="56" y="26" width="200" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="0qD-HN-NRO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                                    <color key="textColor" red="0.11160370579937819" green="0.31181171822959564" blue="0.36465150523560208" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0h" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPC-jd-Ccc">
+                                                    <rect key="frame" x="260" y="26" width="20" height="23"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" red="0.11160370579937819" green="0.31181171822959564" blue="0.36465150523560208" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uPC-jd-Ccc" firstAttribute="top" secondItem="iLu-BE-pJX" secondAttribute="bottom" id="5c3-8g-SJ9"/>
+                                                <constraint firstItem="B2f-Mm-DZe" firstAttribute="top" secondItem="iLu-BE-pJX" secondAttribute="bottom" id="Cfo-Ts-soC"/>
+                                                <constraint firstItem="5va-a2-KXX" firstAttribute="leading" secondItem="pf2-Dw-qoi" secondAttribute="leadingMargin" id="Kpe-7T-42f"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="iLu-BE-pJX" secondAttribute="trailing" id="Zzb-6e-ecM"/>
+                                                <constraint firstItem="5va-a2-KXX" firstAttribute="top" secondItem="pf2-Dw-qoi" secondAttribute="topMargin" constant="-8" id="aNA-Qh-tkB"/>
+                                                <constraint firstItem="iLu-BE-pJX" firstAttribute="top" secondItem="pf2-Dw-qoi" secondAttribute="topMargin" constant="-10" id="eV5-be-p0L"/>
+                                                <constraint firstItem="B2f-Mm-DZe" firstAttribute="leading" secondItem="5va-a2-KXX" secondAttribute="trailing" constant="4" id="pYW-cO-Q9D"/>
+                                                <constraint firstItem="iLu-BE-pJX" firstAttribute="leading" secondItem="5va-a2-KXX" secondAttribute="trailing" constant="4" id="rH1-bS-6Dc"/>
+                                                <constraint firstItem="uPC-jd-Ccc" firstAttribute="leading" secondItem="B2f-Mm-DZe" secondAttribute="trailing" constant="4" id="tuc-BK-1nA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageCategory" destination="5va-a2-KXX" id="AMu-Cf-5XA"/>
+                                            <outlet property="otherService" destination="B2f-Mm-DZe" id="ez3-NP-9we"/>
+                                            <outlet property="timeService" destination="uPC-jd-Ccc" id="fkb-gE-7Pb"/>
+                                            <outlet property="titleService" destination="iLu-BE-pJX" id="Oq5-n3-rhR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OWo-jB-5f2" id="X41-Iu-ZCo"/>
+                                    <outlet property="delegate" destination="OWo-jB-5f2" id="lG6-9a-5lO"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qep-oL-Ozb" firstAttribute="top" secondItem="VjP-lY-qDY" secondAttribute="bottom" id="AKp-br-SeW"/>
+                            <constraint firstItem="VjP-lY-qDY" firstAttribute="leading" secondItem="San-u6-ufa" secondAttribute="leadingMargin" constant="-20" id="De1-Wt-Faq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VjP-lY-qDY" secondAttribute="trailing" constant="-20" id="PG7-rL-oKS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qep-oL-Ozb" secondAttribute="trailing" constant="-20" id="Rjs-Aa-W5c"/>
+                            <constraint firstItem="AzX-e8-gWq" firstAttribute="top" secondItem="qep-oL-Ozb" secondAttribute="bottom" id="hKn-LP-B6W"/>
+                            <constraint firstItem="VjP-lY-qDY" firstAttribute="top" secondItem="dcY-Wc-bmU" secondAttribute="bottom" id="kG5-Xs-0g4"/>
+                            <constraint firstItem="qep-oL-Ozb" firstAttribute="leading" secondItem="San-u6-ufa" secondAttribute="leadingMargin" constant="-20" id="l9W-0s-CK3"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7i-rO-UI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182" y="1575"/>
+        </scene>
         <!--Modif Picture Compte View Controller-->
         <scene sceneID="4cB-sI-DCG">
             <objects>
@@ -1404,22 +1616,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rb0-KW-wcS">
-                                <rect key="frame" x="-4" y="20" width="328" height="44"/>
-                                <items>
-                                    <barButtonItem title="Rendu" id="r4P-SE-DUL">
-                                        <color key="tintColor" red="0.52234006879999995" green="0.80933000649999998" blue="0.45759091140000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="B49-tZ-ALa"/>
-                                    <barButtonItem title="Services" id="aKp-6j-99h">
-                                        <color key="tintColor" red="1" green="0.062036883262506781" blue="0.151791896644899" alpha="1" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="89a-D4-PJV"/>
-                                    <barButtonItem title="Reçu" id="3pb-5V-1Ih">
-                                        <color key="tintColor" red="0.2575681091" green="0.70287884" blue="0.80933000649999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbR-j0-etD">
                                 <rect key="frame" x="-4" y="387" width="328" height="44"/>
                                 <items>
@@ -1495,6 +1691,28 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rb0-KW-wcS">
+                                <rect key="frame" x="-4" y="20" width="328" height="44"/>
+                                <items>
+                                    <barButtonItem title="Rendu" id="r4P-SE-DUL">
+                                        <color key="tintColor" red="0.52234006879999995" green="0.80933000649999998" blue="0.45759091140000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="OWo-jB-5f2" kind="show" id="4Hi-v6-6Oy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="B49-tZ-ALa"/>
+                                    <barButtonItem title="Services" id="aKp-6j-99h">
+                                        <color key="tintColor" red="1" green="0.062036883262506781" blue="0.151791896644899" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="89a-D4-PJV"/>
+                                    <barButtonItem title="Reçu" id="3pb-5V-1Ih">
+                                        <color key="tintColor" red="0.2575681091" green="0.70287884" blue="0.80933000649999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="1NJ-D6-WPv" kind="show" id="8ZI-vV-WJ8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1641,9 +1859,9 @@
         <image name="user" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TC9-cJ-Qm6"/>
-        <segue reference="z9u-48-bKC"/>
-        <segue reference="8gM-J3-M82"/>
-        <segue reference="WDc-4o-WhT"/>
+        <segue reference="Tpd-9O-h1w"/>
+        <segue reference="Gs5-mf-VNe"/>
+        <segue reference="hOD-Do-oE5"/>
+        <segue reference="HUV-72-kJb"/>
     </inferredMetricsTieBreakers>
 </document>

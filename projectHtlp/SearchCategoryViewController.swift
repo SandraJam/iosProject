@@ -69,7 +69,7 @@ class SearchCategoryViewController: UIViewController {
         
         let date = NSDateFormatter()
         date.dateFormat = "dd/MM/yyyy"
-        cell.detailTextLabel!.text = (date.stringFromDate(announces[indexPath.item].valueForKey("endDate") as! NSDate))+" au "+(date.stringFromDate(announces[indexPath.item].valueForKey("beginDate") as! NSDate))
+        cell.detailTextLabel!.text = (date.stringFromDate(announces[indexPath.item].valueForKey("beginDate") as! NSDate))+" au "+(date.stringFromDate(announces[indexPath.item].valueForKey("endDate") as! NSDate))
 
         cell.textLabel!.text = announces[indexPath.item].valueForKey("title") as? String
         return cell
