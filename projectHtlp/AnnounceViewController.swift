@@ -192,4 +192,12 @@ class AnnounceViewController: UIViewController {
     }
 
 
+    @IBAction func onClickValidate(sender: AnyObject) {
+        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("serviceValidate") as? ServiceValidateController {
+            resultController.serviceID = announce
+            presentViewController(resultController, animated: true, completion: nil)
+        } else {
+            print("Echec de l'ouverture de la vue validateService")
+        }
+    }
 }

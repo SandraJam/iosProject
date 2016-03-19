@@ -932,6 +932,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mRf-Cl-doW"/>
                                     <barButtonItem image="add" id="1ep-ir-o0K">
                                         <color key="tintColor" red="1" green="0.37857353919999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="onClickValidate:" destination="AYv-xD-tlx" id="FYS-5o-CZF"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="WYp-Sn-C9b"/>
                                     <barButtonItem title="Avis" id="FVt-DO-f72">
@@ -1043,7 +1046,7 @@
         <!--Valider service-->
         <scene sceneID="ye0-Bu-QX2">
             <objects>
-                <viewController title="Valider service" id="gVY-pQ-zYc" customClass="ServiceValidateController" customModule="projectHtlp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="serviceValidate" title="Valider service" id="gVY-pQ-zYc" customClass="ServiceValidateController" customModule="projectHtlp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gTL-vv-Qzs"/>
                         <viewControllerLayoutGuide type="bottom" id="3VD-49-NNN"/>
@@ -1051,9 +1054,75 @@
                     <view key="view" contentMode="scaleToFill" id="FRJ-JT-xzy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Titre annonce" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfF-iO-hBk">
+                                <rect key="frame" x="0.0" y="20" width="320" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Message d'erreur" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcT-do-8ZA">
+                                <rect key="frame" x="0.0" y="49" width="320" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6Kw-Tq-m1g">
+                                <rect key="frame" x="0.0" y="117" width="320" height="246"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre d'heures demandées" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v46-JK-iSG">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="gVY-pQ-zYc" id="G93-70-6XR"/>
+                                        </connections>
+                                    </textField>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Pyh-tO-kE1">
+                                        <rect key="frame" x="0.0" y="30" width="320" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="480073941.69299698">
+                                            <!--2016-03-19 09:52:21 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d0A-mx-ogc">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="reply" id="440-lg-b2x">
+                                        <connections>
+                                            <action selector="onClickPrevious:" destination="gVY-pQ-zYc" id="uwn-Ch-k04"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tet-V5-oAy"/>
+                                    <barButtonItem title="Valider" id="8CC-UJ-8B1">
+                                        <connections>
+                                            <action selector="onClickValidate:" destination="gVY-pQ-zYc" id="ot8-N7-5eO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Kw-Tq-m1g" firstAttribute="centerX" secondItem="FRJ-JT-xzy" secondAttribute="centerX" id="A6i-XO-dS4"/>
+                            <constraint firstItem="qfF-iO-hBk" firstAttribute="width" secondItem="FRJ-JT-xzy" secondAttribute="width" id="KJr-Ej-h5Q"/>
+                            <constraint firstItem="LcT-do-8ZA" firstAttribute="width" secondItem="FRJ-JT-xzy" secondAttribute="width" id="WZJ-YL-Q42"/>
+                            <constraint firstItem="6Kw-Tq-m1g" firstAttribute="width" secondItem="FRJ-JT-xzy" secondAttribute="width" id="YDl-aa-iUA"/>
+                            <constraint firstItem="LcT-do-8ZA" firstAttribute="centerX" secondItem="FRJ-JT-xzy" secondAttribute="centerX" id="bnz-0R-krx"/>
+                            <constraint firstItem="d0A-mx-ogc" firstAttribute="centerX" secondItem="FRJ-JT-xzy" secondAttribute="centerX" id="d7c-iV-R2E"/>
+                            <constraint firstItem="qfF-iO-hBk" firstAttribute="centerX" secondItem="FRJ-JT-xzy" secondAttribute="centerX" id="oY7-Xb-DCM"/>
+                            <constraint firstItem="6Kw-Tq-m1g" firstAttribute="centerY" secondItem="FRJ-JT-xzy" secondAttribute="centerY" id="rLQ-vx-8na"/>
+                            <constraint firstItem="d0A-mx-ogc" firstAttribute="width" secondItem="FRJ-JT-xzy" secondAttribute="width" id="ssh-E1-EoU"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="datePicker" destination="Pyh-tO-kE1" id="ylS-5n-zlu"/>
+                        <outlet property="errorLabel" destination="LcT-do-8ZA" id="WWn-ER-daT"/>
+                        <outlet property="label" destination="qfF-iO-hBk" id="alx-Gd-oz0"/>
+                        <outlet property="textField" destination="v46-JK-iSG" id="YPf-6L-l5L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBV-fy-Mcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
