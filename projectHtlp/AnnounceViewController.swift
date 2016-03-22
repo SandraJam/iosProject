@@ -94,7 +94,7 @@ class AnnounceViewController: UIViewController {
                     }
                     score = score / Double(notes.count)
                 }
-                if (score  == 5.0){
+                if (score  >= 5.0){
                     star5.image = UIImage(named: "star")
                 }else if (score > 4.4){
                     star5.image = UIImage(named: "star_half")
@@ -102,33 +102,33 @@ class AnnounceViewController: UIViewController {
                     star5.image = UIImage(named: "star_empty")
                 }
                 
-                if (score  == 4.0){
+                if (score  >= 4.0){
                     star4.image = UIImage(named: "star")
-                }else if (score > 3.4){
+                }else if (score > 3.4 && score < 4.0){
                     star4.image = UIImage(named: "star_half")
                 }else{
                     star4.image = UIImage(named: "star_empty")
                 }
                 
-                if (score  == 3.0){
+                if (score  >= 3.0){
                     star3.image = UIImage(named: "star")
-                }else if (score > 2.4){
+                }else if (score > 2.4 && score < 3.0){
                     star3.image = UIImage(named: "star_half")
                 }else{
                     star3.image = UIImage(named: "star_empty")
                 }
                 
-                if (score  == 2.0){
+                if (score  >= 2.0){
                     star2.image = UIImage(named: "star")
-                }else if (score > 1.4){
+                }else if (score > 1.4 && score < 2.0){
                     star2.image = UIImage(named: "star_half")
                 }else{
                     star2.image = UIImage(named: "star_empty")
                 }
                 
-                if (score  == 1.0){
+                if (score  >= 1.0){
                     star1.image = UIImage(named: "star")
-                }else if (score > 0.4){
+                }else if (score > 0.4 && score < 1.0){
                     star1.image = UIImage(named: "star_half")
                 }else{
                     star1.image = UIImage(named: "star_empty")
