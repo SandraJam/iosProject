@@ -74,6 +74,16 @@ class AvisRecuViewController: UIViewController {
         return cell;
     }
     
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("avisView") as? AvisViewController {
+            resultController.retour = "avisrecu"
+            resultController.avisId = avisArray[indexPath.item].objectID
+            resultController.profilId = profilId
+            resultController.announceId = announceId
+            presentViewController(resultController, animated: true, completion: nil)
+        }
+    }
+    
     func colorWithHexString (hex:String) -> UIColor {
         var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
         

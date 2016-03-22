@@ -128,18 +128,14 @@ class AvisAnnounceViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-    
-    
-    // lien pour ouvrir la page de l'annonce
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "segueAvisAnnounce" {
-            if let destination = segue.destinationViewController as? AVISController {
-                if let idIndex = tableView.indexPathForSelectedRow?.row {
-                    destination.announce = avis[idIndex].objectID
-                }
-            }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("avisView") as? AvisViewController {
+            resultController.retour = "avisannounce"
+            resultController.avisId = avisArray[indexPath.item].objectID
+            resultController.announceId = announceId
+            presentViewController(resultController, animated: true, completion: nil)
         }
-    }*/
+    }
 
     @IBAction func onClickPrevious(sender: AnyObject) {
             if let resultController = storyboard?.instantiateViewControllerWithIdentifier("announce") as? AnnounceViewController {
