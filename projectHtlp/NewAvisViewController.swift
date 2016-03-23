@@ -26,6 +26,31 @@ class NewAvisViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        do {
+            let service = try context.existingObjectWithID(servicedonneId)
+            
+            let today = NSDate()
+            let order = NSCalendar.currentCalendar().compareDate(today, toDate: service.valueForKey("date") as! NSDate, toUnitGranularity: .Day)
+            switch order {
+                case .OrderedAscending:
+                    star1.enabled = false
+                    star2.enabled = false
+                    star3.enabled = false
+                    star4.enabled = false
+                    star5.enabled = false
+                    descAvis.editable = false
+                    descAvis.text = "Ce service n'a pas encore eu lieu!"
+                    break
+                default:
+                    break
+            }
+        } catch {
+            
+        }
+
     }
 
     override func didReceiveMemoryWarning() {

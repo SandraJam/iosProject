@@ -37,8 +37,10 @@ class CompteViewController: UIViewController {
                     nom.text = res.valueForKey("name")! as? String
                     prenom.text = res.valueForKey("firstname")! as? String
                     mailText.text = res.valueForKey("mail")! as? String
-                    if (res.valueForKey("picture") != nil){
+                    if (res.valueForKey("picture") != nil && res.valueForKey("picture") as! String != ""){
                         picture.image = UIImage (named: res.valueForKey("picture")! as! String)
+                    }else{
+                        picture.image = UIImage (named: "koala1")
                     }
                     adresseText.text = res.valueForKey("address")! as? String
                     bioText.text = res.valueForKey("bio")! as? String
