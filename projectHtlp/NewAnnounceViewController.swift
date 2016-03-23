@@ -30,6 +30,8 @@ class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         scrollview.contentSize.height = 800
         
+        // Background
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "fond2")!)
         selectedCategory = "none"
         
         // bordure du textView de la description
