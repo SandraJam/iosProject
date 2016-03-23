@@ -31,8 +31,8 @@ class AvisRecuViewController: UIViewController {
                 let resultats = try context.executeFetchRequest(requete)
                 if (resultats.count > 0){
                     for av in resultats as! [NSManagedObject] {
-                        let name = ( (av.valueForKey("donneurAvis")!.valueForKey("firstname")!) as! String ) + ( (av.valueForKey("donneurAvis")!.valueForKey("name")!) as! String )
-                        let description : String = (av.valueForKey("note")!.stringValue) + "/5: " + String( (av.valueForKey("text")! as! String).characters.prefix(10) ) + "..."
+                        let name = ( (av.valueForKey("donneurAvis")!.valueForKey("firstname")!) as! String ) + " " + ( (av.valueForKey("donneurAvis")!.valueForKey("name")!) as! String )
+                        let description : String = (av.valueForKey("note")!.stringValue) + "/5: " + String( (av.valueForKey("text")! as! String).characters.prefix(25) ) + "..."
                         
                         avisArray += [(title: name, description: description, color: "ffe594", objectID: av.objectID)]
                     }
