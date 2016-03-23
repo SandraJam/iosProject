@@ -28,6 +28,7 @@
 		ED8EAF781C824653007C3256 /* NewAnnounceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EAF771C824653007C3256 /* NewAnnounceViewController.swift */; };
 		ED94E9921C9AEF7100D876C8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94E9911C9AEF7100D876C8 /* SearchViewController.swift */; };
 		ED94E9941C9C100E00D876C8 /* ServiceValidateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94E9931C9C100E00D876C8 /* ServiceValidateController.swift */; };
+		ED94E9D81CA1B88600D876C8 /* AvisAnnounceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94E9D71CA1B88600D876C8 /* AvisAnnounceViewController.swift */; };
 		EDDA0B511C9C11180048C9BE /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA0B501C9C11180048C9BE /* ProfilViewController.swift */; };
 		EDDDFE811C909F3500DE5602 /* CompteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE801C909F3500DE5602 /* CompteViewController.swift */; };
 		EDDDFE831C91E34B00DE5602 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDDFE821C91E34B00DE5602 /* CategoriesTableViewController.swift */; };
@@ -64,6 +65,7 @@
 		ED8EAF771C824653007C3256 /* NewAnnounceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAnnounceViewController.swift; sourceTree = "<group>"; };
 		ED94E9911C9AEF7100D876C8 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ED94E9931C9C100E00D876C8 /* ServiceValidateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceValidateController.swift; sourceTree = "<group>"; };
+		ED94E9D71CA1B88600D876C8 /* AvisAnnounceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvisAnnounceViewController.swift; sourceTree = "<group>"; };
 		EDDA0B501C9C11180048C9BE /* ProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		EDDDFE801C909F3500DE5602 /* CompteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompteViewController.swift; sourceTree = "<group>"; };
 		EDDDFE821C91E34B00DE5602 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				ED5E2DBD1C9D7D7B00518E62 /* ChoiceMapViewController.swift */,
 				ED5E2DBF1C9D89E100518E62 /* GeoResultViewController.swift */,
 				ED5E2DC11C9D8C2500518E62 /* ListResultViewController.swift */,
+				ED94E9D71CA1B88600D876C8 /* AvisAnnounceViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				ED94E9941C9C100E00D876C8 /* ServiceValidateController.swift in Sources */,
 				ED5E2DB81C9D4DEA00518E62 /* ServiceTableViewCell.swift in Sources */,
 				ED94E9921C9AEF7100D876C8 /* SearchViewController.swift in Sources */,
+				ED94E9D81CA1B88600D876C8 /* AvisAnnounceViewController.swift in Sources */,
 				ED8EAF761C824475007C3256 /* AccueilViewController.swift in Sources */,
 				EDDDFE8D1C97128200DE5602 /* AnnounceViewController.swift in Sources */,
 				ED5E2DB21C9D49E500518E62 /* MesServiceRenduViewController.swift in Sources */,
