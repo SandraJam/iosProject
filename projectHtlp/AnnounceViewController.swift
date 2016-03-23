@@ -200,4 +200,14 @@ class AnnounceViewController: UIViewController {
             print("Echec de l'ouverture de la vue validateService")
         }
     }
+    
+    @IBAction func onClickAvis(sender: AnyObject) {
+            if let resultController = storyboard?.instantiateViewControllerWithIdentifier("avisAnnounce") as? AvisAnnounceViewController {
+                resultController.announceId = announce
+                presentViewController(resultController, animated: true, completion: nil)
+            } else {
+                print("Echec de l'ouverture de la vue AvisAnnounce")
+            }
+    }
+    
 }
