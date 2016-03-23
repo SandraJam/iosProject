@@ -1219,7 +1219,7 @@
                                     <barButtonItem title="Avis" id="FVt-DO-f72">
                                         <color key="tintColor" red="0.18179722866340353" green="0.51040322334911947" blue="0.58965968586387429" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <action selector="onClickAvis:" destination="AYv-xD-tlx" id="EqI-NH-yYR"/>
+                                            <action selector="onClickAvis:" destination="AYv-xD-tlx" id="KAb-Se-4t6"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
