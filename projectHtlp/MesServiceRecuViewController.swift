@@ -17,6 +17,7 @@ class MesServiceRecuViewController: UIViewController {
     var details : [String] = []
     var times : [String] = []
     var resultats : [AnyObject] = []
+    var dejaAvis: [Bool] = []
     var userId : NSManagedObjectID!
     
     override func viewDidLoad() {
@@ -45,6 +46,21 @@ class MesServiceRecuViewController: UIViewController {
                 resultats = try context.executeFetchRequest(requete2)
                 if resultats.count > 0 {
                     for resultat in resultats as! [NSManagedObject] {
+                        let requete3 = NSFetchRequest(entityName: "Avis")
+                        let userForAvis = try context.existingObjectWithID(resultat.valueForKey("userRecoit")!.objectID)
+                        requete3.predicate = NSPredicate(format: "service = %@ AND donneurAvis = %@", resultat, userForAvis)
+
+                        do {
+                            let avis = try context.executeFetchRequest(requete3)
+                            if avis.count == 0 {
+                                dejaAvis.append(false)
+                            }else{
+                                dejaAvis.append(true)
+                            }
+                        } catch {
+                            print("Echec")
+                        }
+                        
                         icons.append((resultat.valueForKey("service")!.valueForKey("category")!.valueForKey("icon") as? String)!)
                         colors.append((resultat.valueForKey("service")!.valueForKey("category")!.valueForKey("color") as? String)!)
                         titles.append((resultat.valueForKey("service")!.valueForKey("title") as? String)!)
@@ -110,13 +126,19 @@ class MesServiceRecuViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("avis") as? NewAvisViewController {
-            resultController.servicedonneId = resultats[indexPath.item].objectID
-            resultController.receveurId = resultats[indexPath.item].valueForKey("service")!.valueForKey("userDonne")!.objectID
-            resultController.donneurId = resultats[indexPath.item].valueForKey("userRecoit")!.objectID
-            presentViewController(resultController, animated: true, completion: nil)
+        if (dejaAvis[indexPath.row]){
+            if let resultController = storyboard?.instantiateViewControllerWithIdentifier("announce") as? AnnounceViewController {
+                resultController.announce = resultats[indexPath.item].valueForKey("service")!.objectID
+                presentViewController(resultController, animated: true, completion: nil)
+            }
+        }else{
+            if let resultController = storyboard?.instantiateViewControllerWithIdentifier("avis") as? NewAvisViewController {
+                resultController.servicedonneId = resultats[indexPath.item].objectID
+                resultController.receveurId = resultats[indexPath.item].valueForKey("service")!.valueForKey("userDonne")!.objectID
+                resultController.donneurId = resultats[indexPath.item].valueForKey("userRecoit")!.objectID
+                presentViewController(resultController, animated: true, completion: nil)
+            }
         }
-        
     }
     
     // Creates a UIColor from a Hex string.
