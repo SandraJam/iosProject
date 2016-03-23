@@ -116,6 +116,21 @@ class ProfilViewController: UIViewController {
 
     }
 
+    @IBAction func goAvisDonne(sender: AnyObject) {
+        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("avisDonne") as? AvisDonneViewController {
+            resultController.announceId = idAnnounce
+            resultController.profilId = idProfil
+            presentViewController(resultController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func goAvisRecu(sender: AnyObject) {
+        if let resultController = storyboard?.instantiateViewControllerWithIdentifier("avisRecu") as? AvisRecuViewController {
+            resultController.announceId = idAnnounce
+            resultController.profilId = idProfil
+            presentViewController(resultController, animated: true, completion: nil)
+        }
+    }
     /*
     // MARK: - Navigation
 

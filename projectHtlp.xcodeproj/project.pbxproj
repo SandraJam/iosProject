@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C16298C1CA2DE2500C0EE18 /* AvisRecuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16298B1CA2DE2500C0EE18 /* AvisRecuViewController.swift */; };
+		0C16298E1CA2DE3300C0EE18 /* AvisDonneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16298D1CA2DE3300C0EE18 /* AvisDonneViewController.swift */; };
 		0C45F3331C7F5D6E0009A19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C45F3321C7F5D6E0009A19E /* AppDelegate.swift */; };
 		0C45F3351C7F5D6E0009A19E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C45F3341C7F5D6E0009A19E /* ViewController.swift */; };
 		0C45F3381C7F5D6E0009A19E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C45F3361C7F5D6E0009A19E /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C16298B1CA2DE2500C0EE18 /* AvisRecuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvisRecuViewController.swift; sourceTree = "<group>"; };
+		0C16298D1CA2DE3300C0EE18 /* AvisDonneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvisDonneViewController.swift; sourceTree = "<group>"; };
 		0C45F32F1C7F5D6E0009A19E /* projectHtlp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectHtlp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C45F3321C7F5D6E0009A19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C45F3341C7F5D6E0009A19E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				ED5E2DBF1C9D89E100518E62 /* GeoResultViewController.swift */,
 				ED5E2DC11C9D8C2500518E62 /* ListResultViewController.swift */,
 				ED94E9D71CA1B88600D876C8 /* AvisAnnounceViewController.swift */,
+				0C16298B1CA2DE2500C0EE18 /* AvisRecuViewController.swift */,
+				0C16298D1CA2DE3300C0EE18 /* AvisDonneViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -225,10 +231,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C16298E1CA2DE3300C0EE18 /* AvisDonneViewController.swift in Sources */,
 				ED89AD011C7F672800EB6668 /* ConnexionViewController.swift in Sources */,
 				ED7C9FA11C899EC9004FF4A4 /* NewCategoryViewController.swift in Sources */,
 				ED8EAF781C824653007C3256 /* NewAnnounceViewController.swift in Sources */,
 				ED89AD031C7F676100EB6668 /* InscriptionViewController.swift in Sources */,
+				0C16298C1CA2DE2500C0EE18 /* AvisRecuViewController.swift in Sources */,
 				0C45F3351C7F5D6E0009A19E /* ViewController.swift in Sources */,
 				EDDDFE831C91E34B00DE5602 /* CategoriesTableViewController.swift in Sources */,
 				EDDDFE891C96F91600DE5602 /* ModifCompteViewController.swift in Sources */,
