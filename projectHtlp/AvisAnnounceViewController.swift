@@ -52,8 +52,8 @@ class AvisAnnounceViewController: UIViewController, UITableViewDelegate, UITable
                                 //var avisDonneurService: NSManagedObject? = nil
                                 
                                 for av in avis as! [NSManagedObject] {
-                                    let name = ( (av.valueForKey("donneurAvis")!.valueForKey("firstname")!) as! String ) + ( (av.valueForKey("donneurAvis")!.valueForKey("name")!) as! String )
-                                    let description : String = (av.valueForKey("note")!.stringValue) + "/5: " + String( (av.valueForKey("text")! as! String).characters.prefix(10) ) + "..."
+                                    let name = ( (av.valueForKey("donneurAvis")!.valueForKey("firstname")!) as! String ) + " " + ( (av.valueForKey("donneurAvis")!.valueForKey("name")!) as! String )
+                                    let description : String = (av.valueForKey("note")!.stringValue) + "/5: " + String( (av.valueForKey("text")! as! String).characters.prefix(25) ) + "..."
                                     
                                     var couleur : String
                                     if userRecoit.valueForKey("mail") as! String == av.valueForKey("donneurAvis")!.valueForKey("mail") as! String {
