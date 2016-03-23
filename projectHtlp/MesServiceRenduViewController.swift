@@ -46,7 +46,9 @@ class MesServiceRenduViewController: UIViewController {
                 if resultats.count > 0 {
                     for resultat in resultats as! [NSManagedObject] {
                         icons.append((resultat.valueForKey("category")!.valueForKey("icon") as? String)!)
+                        
                         colors.append((resultat.valueForKey("category")!.valueForKey("color") as? String)!)
+                        
                         titles.append((resultat.valueForKey("title") as? String)!)
                         ids.append(resultat.objectID)
                         

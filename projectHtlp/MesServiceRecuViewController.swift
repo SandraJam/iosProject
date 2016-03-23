@@ -54,15 +54,16 @@ class MesServiceRecuViewController: UIViewController {
                             let avis = try context.executeFetchRequest(requete3)
                             if avis.count == 0 {
                                 dejaAvis.append(false)
+                                colors.append("F07F7F")
                             }else{
                                 dejaAvis.append(true)
+                                colors.append((resultat.valueForKey("service")!.valueForKey("category")!.valueForKey("color") as? String)!)
                             }
                         } catch {
                             print("Echec")
                         }
                         
                         icons.append((resultat.valueForKey("service")!.valueForKey("category")!.valueForKey("icon") as? String)!)
-                        colors.append((resultat.valueForKey("service")!.valueForKey("category")!.valueForKey("color") as? String)!)
                         titles.append((resultat.valueForKey("service")!.valueForKey("title") as? String)!)
                         
                         let date = NSDateFormatter()
