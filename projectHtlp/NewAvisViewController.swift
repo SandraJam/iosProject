@@ -20,6 +20,7 @@ class NewAvisViewController: UIViewController, UITextViewDelegate {
     
     var note: NSNumber = 0
     
+    @IBOutlet weak var validationButton: UIBarButtonItem!
     var servicedonneId: NSManagedObjectID!
     var donneurId: NSManagedObjectID!
     var receveurId: NSManagedObjectID!
@@ -42,6 +43,7 @@ class NewAvisViewController: UIViewController, UITextViewDelegate {
                     star3.enabled = false
                     star4.enabled = false
                     star5.enabled = false
+                    validationButton.enabled = false
                     descAvis.editable = false
                     descAvis.text = "Ce service n'a pas encore eu lieu!"
                     break
