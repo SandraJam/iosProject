@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
     <entity name="Avis" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="donneurAvis" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="noteDonnee" inverseEntity="User" syncable="YES"/>
@@ -11,7 +10,6 @@
     <entity name="Category" syncable="YES">
         <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="service" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Service" inverseName="category" inverseEntity="Service" syncable="YES"/>
     </entity>
@@ -19,7 +17,6 @@
         <attribute name="beginDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="totalTime" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="service" inverseEntity="Category" syncable="YES"/>
@@ -28,7 +25,6 @@
     </entity>
     <entity name="ServiceDonne" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="avis" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avis" inverseName="service" inverseEntity="Avis" syncable="YES"/>
         <relationship name="service" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Service" inverseName="serviceDonne" inverseEntity="Service" syncable="YES"/>
@@ -38,7 +34,6 @@
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="mail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
@@ -49,10 +44,10 @@
         <relationship name="serviceRecu" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceDonne" inverseName="userRecoit" inverseEntity="ServiceDonne" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Avis" positionX="-261" positionY="-7" width="128" height="133"/>
-        <element name="Category" positionX="-279" positionY="162" width="128" height="118"/>
-        <element name="Service" positionX="-117" positionY="207" width="128" height="178"/>
-        <element name="ServiceDonne" positionX="180" positionY="369" width="128" height="133"/>
-        <element name="User" positionX="-459" positionY="239" width="92" height="225"/>
+        <element name="Avis" positionX="-261" positionY="-7" width="128" height="120"/>
+        <element name="Category" positionX="-279" positionY="162" width="128" height="105"/>
+        <element name="Service" positionX="-117" positionY="207" width="128" height="165"/>
+        <element name="ServiceDonne" positionX="180" positionY="369" width="128" height="120"/>
+        <element name="User" positionX="-459" positionY="239" width="92" height="210"/>
     </elements>
 </model>

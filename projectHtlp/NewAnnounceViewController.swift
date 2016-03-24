@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
     
     @IBOutlet weak var scrollview: UIScrollView!
@@ -27,6 +27,9 @@ class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timeTextField.delegate = self
+        titreTextField.delegate = self
         
         scrollview.contentSize.height = 800
         
@@ -53,6 +56,11 @@ class NewAnnounceViewController: UIViewController, UIPickerViewDataSource, UIPic
         } catch {
             print("Echec de la requête: get")
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     override func didReceiveMemoryWarning() {

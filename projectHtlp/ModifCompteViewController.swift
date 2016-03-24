@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ModifCompteViewController: UIViewController {
+class ModifCompteViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var mailText: UITextField!
     @IBOutlet weak var addressText: UITextField!
     @IBOutlet weak var mdp: UITextField!
@@ -19,6 +19,11 @@ class ModifCompteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mailText.delegate = self
+        addressText.delegate = self
+        mdp.delegate = self
+        mdp2.delegate = self
         
         // Background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "fond2")!)
@@ -43,6 +48,11 @@ class ModifCompteViewController: UIViewController {
         }
 
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     override func didReceiveMemoryWarning() {

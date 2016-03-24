@@ -78,10 +78,6 @@ class ServiceValidateController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
-    func textViewShouldReturn(textField: UITextView) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
 
     
     @IBAction func onClickPrevious(sender: AnyObject) {
@@ -132,29 +128,27 @@ class ServiceValidateController: UIViewController, UITextFieldDelegate {
         
         var order = NSCalendar.currentCalendar().compareDate(dateWanted, toDate: dateBegin, toUnitGranularity: .Day)
         switch order {
-        case .OrderedSame:
-            print("date demandée = date début service")
-        case .OrderedDescending:
-            print("date demandée après date début service")
         case .OrderedAscending:
             // erreur, date avant service
             error = true
             errorLabel.text = "La personne n'est pas disponible à la date saisie"
             datePicker.layer.borderWidth = 2
             datePicker.layer.borderColor = UIColor.redColor().CGColor
+            break
+        default:
+            break
         }
         order = NSCalendar.currentCalendar().compareDate(dateWanted, toDate: dateFinal, toUnitGranularity: .Day)
         switch order {
-        case .OrderedSame:
-            print("date demandée = date fin service")
-        case .OrderedAscending:
-            print("date demandée avant date fin service")
         case .OrderedDescending:
             // erreur, date apres service
             error = true
             errorLabel.text = "La personne n'est pas disponible à la date saisie"
             datePicker.layer.borderWidth = 2
             datePicker.layer.borderColor = UIColor.redColor().CGColor
+            break
+        default:
+            break
         }
         
         

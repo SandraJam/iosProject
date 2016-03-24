@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChoiceMapViewController: UIViewController {
+class ChoiceMapViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var kmLabel: UILabel!
@@ -19,6 +19,13 @@ class ChoiceMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "fond2")!)
+        
+        departPoint.delegate = self
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     override func didReceiveMemoryWarning() {

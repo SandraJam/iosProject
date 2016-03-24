@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NewAvisViewController: UIViewController {
+class NewAvisViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var star3: UIButton!
     @IBOutlet weak var star2: UIButton!
     @IBOutlet weak var star1: UIButton!
@@ -26,6 +26,7 @@ class NewAvisViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        descAvis.delegate = self
         
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context: NSManagedObjectContext = appDel.managedObjectContext
@@ -53,6 +54,11 @@ class NewAvisViewController: UIViewController {
 
     }
 
+    func textViewShouldReturn(textView: UITextView) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
